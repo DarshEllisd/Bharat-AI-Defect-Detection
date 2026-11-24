@@ -3,7 +3,7 @@
 # Starts after resume_w3b.sh (one GPU job at a time). Resumable (checkpoints, skip if evaluated).
 set -uo pipefail
 export PYTHONUNBUFFERED=1
-cd /mnt/c/Users/Darsh/Desktop/BharatAI-SOC
+cd "$(dirname "${BASH_SOURCE[0]}")/../../.."
 PY=$HOME/bharatai-build/train-venv/bin/python
 B=$HOME/bharatai-build; A=$B/datasets/anomaly_own/fabric; M=$B/models/efficientad
 while pgrep -f "[r]esume_w3b.sh" >/dev/null; do sleep 30; done

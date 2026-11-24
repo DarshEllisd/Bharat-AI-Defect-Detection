@@ -7,7 +7,7 @@
 # 16a8w QNN export with synthetic-defect calibration -> push .pte -> point categories.toml at it.
 set -euo pipefail
 P=${1:?product (wood|fabric)}; ITERS=${2:-20000}
-REPO=/mnt/c/Users/Darsh/Desktop/BharatAI-SOC
+REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
 B=$HOME/bharatai-build; PY=$B/train-venv/bin/python
 NAME="${P}_teach"; [ "$P" = fabric ] && TILES=2 || TILES=1
 export PYTHONUNBUFFERED=1

@@ -2,7 +2,7 @@
 # W3-E: quantised NPU exports (anomaly 16a8w, YOLO 8a8w) + int8-vs-fp32 accuracy for the deployed models, one at a time (CPU).
 #   bash training/vision/runs/export_all.sh        log -> ~/bharatai-build/models/npu/export_all.log
 # Skips a model whose export_report.json exists (resumable).
-D=/mnt/c/Users/Darsh/Desktop/BharatAI-SOC/training/vision/runs
+D="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 N=$HOME/bharatai-build/models/npu; mkdir -p $N
 Q=${Q:-16a8w}   # anomaly models: 16-bit activations (8a8w collapses the squared-difference maps, P-59)
 for m in mvtec_wood own_wood own_fabric_t2 mvtec_carpet; do

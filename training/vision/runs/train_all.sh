@@ -3,7 +3,7 @@
 # (one GPU-resident process at ~23 it/s beats two parallel lanes and keeps the CPU free - P-48).
 #   bash training/vision/runs/train_all.sh          logs -> ~/bharatai-build/models/efficientad/logs/
 set -uo pipefail
-cd /mnt/c/Users/Darsh/Desktop/BharatAI-SOC
+cd "$(dirname "${BASH_SOURCE[0]}")/../../.."
 export PYTHONUNBUFFERED=1
 PY=$HOME/bharatai-build/train-venv/bin/python
 B=$HOME/bharatai-build

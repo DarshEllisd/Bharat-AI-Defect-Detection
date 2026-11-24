@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Speed/CPU check of train_efficientad.py: 1500 iterations on MVTec wood, CPU + GPU sampled at 60 s.
-cd /mnt/c/Users/Darsh/Desktop/BharatAI-SOC
+cd "$(dirname "${BASH_SOURCE[0]}")/../../.."
 B=$HOME/bharatai-build
 rm -rf $B/models/efficientad/smoke_wood
 $B/train-venv/bin/python training/vision/train_efficientad.py --name smoke_wood --iters 1500 \

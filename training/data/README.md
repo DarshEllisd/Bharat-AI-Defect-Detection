@@ -41,12 +41,12 @@ One-time setup (already done): `bash training/data/label_studio/setup_label_stud
 
 1. **Start the server** (runs in the background; safe to run again):
    ```bash
-   bash /mnt/c/Users/Darsh/Desktop/BharatAI-SOC/training/data/label_studio/ensure_label_studio.sh
+   bash <repo>/training/data/label_studio/ensure_label_studio.sh
    ```
    The first start can take 2-3 minutes (P-36). It prints `healthy: http://localhost:8080` when ready.
 2. **Import the pulled photos** (in a second Ubuntu window):
    ```bash
-   ~/bharatai-build/ls-venv/bin/python /mnt/c/Users/Darsh/Desktop/BharatAI-SOC/training/data/label_studio/setup_projects.py --sync
+   ~/bharatai-build/ls-venv/bin/python <repo>/training/data/label_studio/setup_projects.py --sync
    ```
    Only defect photos are imported; `good` photos need no boxes.
 3. **Log in** at `http://localhost:8080` with the user and password from `credentials.env` (`cat ~/bharatai-build/label-studio/credentials.env`).

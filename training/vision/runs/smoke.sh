@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # W3-B smoke test: 600 iterations on MVTec wood, then evaluation (checks the whole pipeline end to end).
 set -euo pipefail
-cd /mnt/c/Users/Darsh/Desktop/BharatAI-SOC
+cd "$(dirname "${BASH_SOURCE[0]}")/../../.."
 PY=$HOME/bharatai-build/train-venv/bin/python
 B=$HOME/bharatai-build
 $PY training/vision/train_efficientad.py --name smoke_wood --iters 600 "$@" \

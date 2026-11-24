@@ -9,6 +9,7 @@ Engineering record for the **Edge Quality Inspector** (AIBharat Problem Statemen
 | [`models/MODELS.md`](models/MODELS.md) | **Model card**: deployed vision models, training, metrics (fp32, quantised, on-phone NPU), limitations, licences |
 | [`problems/PROBLEMS_AND_FIXES.md`](problems/PROBLEMS_AND_FIXES.md) | **Problems and fixes**: symptom, root cause, fix, and where the fix lives |
 | [`data/DATASET.md`](data/DATASET.md) | **Data card**: sources, licence, counts, splits, quality checks, caveats |
+| [`technical_report.md`](technical_report.md) | **Final technical report** (methodology, results, hardware utilisation, optimisations). `technical_report.docx` / `.pdf` are built from it with `report_assets/md_to_docx.py` |
 
 Related files elsewhere in the repo:
 - [`../PROBLEM_STATEMENT.md`](../PROBLEM_STATEMENT.md): the brief

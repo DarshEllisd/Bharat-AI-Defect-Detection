@@ -4,7 +4,7 @@
 #   bash training/vision/runs/export_npu.sh yolo [args]
 set -euo pipefail
 WORK="$HOME/bharatai-build"
-REPO=/mnt/c/Users/Darsh/Desktop/BharatAI-SOC
+REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
 QNN_SDK_ROOT="$(dirname "$(dirname "$(find "$WORK/qairt" -type d -path '*/lib/aarch64-android' | head -n1)")")"
 export QNN_SDK_ROOT PYTHONUNBUFFERED=1
 # shellcheck disable=SC1091

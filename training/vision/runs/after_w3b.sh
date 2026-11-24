@@ -4,7 +4,7 @@
 #  2. own_fabric with scale augmentation (camera-distance mismatch, P-51)
 set -uo pipefail
 export PYTHONUNBUFFERED=1
-cd /mnt/c/Users/Darsh/Desktop/BharatAI-SOC
+cd "$(dirname "${BASH_SOURCE[0]}")/../../.."
 PY=$HOME/bharatai-build/train-venv/bin/python
 B=$HOME/bharatai-build
 M=$B/models/efficientad

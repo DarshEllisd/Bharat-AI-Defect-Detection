@@ -53,7 +53,7 @@ spike/
 | `adb` (Android platform-tools) | ✅ installed | Add the **platform-tools folder** to PATH, enable **USB debugging** on the phone, and accept the prompt when you run `adb devices` |
 | Hugging Face account with the **Llama 3.2 licence** accepted | ? | Run `hf auth login` after A1, inside the venv |
 
-To raise WSL memory, edit `C:\Users\Darsh\.wslconfig` so it reads:
+To raise WSL memory, edit `%UserProfile%\.wslconfig` so it reads:
 ```ini
 [wsl2]
 memory=10GB
@@ -67,7 +67,7 @@ Root cause, measured on 2026-11-01: this internet connection's **IPv4** route to
 - Check any time: `bash spike/laptop/check_hosts.sh` (speed and IP version per build host).
 - Still slow: **GitHub and Qualcomm**, which are IPv4-only. If a large download from them stalls, use a different network for it (e.g. phone hotspot on the second Wi-Fi adapter).
 
-Run from the project root inside WSL (`cd /mnt/c/Users/Darsh/Desktop/BharatAI-SOC`):
+Run from the project root inside WSL (`cd /mnt/c/<path-to>/BharatAI-SOC`):
 
 ```bash
 # A1. Build the Android runners (first run ~1-2 h: NDK download, ExecuTorch install + build)

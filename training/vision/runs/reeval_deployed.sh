@@ -2,7 +2,7 @@
 # Re-evaluate the deployed anomaly models after the preprocessing fix (P-60). GPU, ~1 min each.
 # Previous results are kept as eval_noaa.json (no antialias).
 export PYTHONUNBUFFERED=1
-cd /mnt/c/Users/Darsh/Desktop/BharatAI-SOC
+cd "$(dirname "${BASH_SOURCE[0]}")/../../.."
 PY=$HOME/bharatai-build/train-venv/bin/python; B=$HOME/bharatai-build; M=$B/models/efficientad
 ev() { local name=$1 val=$2 test=$3; shift 3
   [ -f $M/$name/eval.json ] && [ ! -f $M/$name/eval_noaa.json ] && cp $M/$name/eval.json $M/$name/eval_noaa.json
