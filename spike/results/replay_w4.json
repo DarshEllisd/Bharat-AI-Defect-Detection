@@ -1,0 +1,193 @@
+{
+  "device_time": "2026-11-24 11:16:52",
+  "wood": {
+    "n_val_good": 5,
+    "n_test": 66,
+    "phone_calibration": {
+      "threshold": 0.11143,
+      "p99": 0.09873,
+      "std": 0.01269,
+      "margin": 0.01269,
+      "mean": 0.07901,
+      "min": 0.05987,
+      "max": 0.09941,
+      "n_frames": 5,
+      "rule": "p99 + max(1 x std, 10% x p99) of good-frame scores",
+      "id": "2b37e95681b5",
+      "ts": "2026-11-24T11:16:52"
+    },
+    "image_auroc_phone": 1.0,
+    "image_auroc_laptop_16a8w": 1.0,
+    "false_alarms": "7/15",
+    "recall": "51/51",
+    "flagged_per_label": {
+      "color": "15/15",
+      "good": "7/15",
+      "hole": "12/12",
+      "liquid": "20/20",
+      "scratch": "4/4"
+    },
+    "dispositions_per_label": {
+      "color": {
+        "REWORK": 5,
+        "HOLD": 10
+      },
+      "good": {
+        "PASS": 9,
+        "REWORK": 6
+      },
+      "hole": {
+        "SCRAP": 11,
+        "HOLD": 1
+      },
+      "liquid": {
+        "HOLD": 8,
+        "SCRAP": 12
+      },
+      "scratch": {
+        "HOLD": 4
+      }
+    },
+    "latency_ms": {
+      "square": {
+        "p50": 0.0,
+        "p95": 0.0
+      },
+      "pre_anomaly": {
+        "p50": 11.9,
+        "p95": 14.7
+      },
+      "npu": {
+        "p50": 28.8,
+        "p95": 29.9
+      },
+      "anomaly_total": {
+        "p50": 31.4,
+        "p95": 33.4
+      },
+      "pre_yolo": {
+        "p50": 27.7,
+        "p95": 32.5
+      },
+      "yolo_cpu": {
+        "p50": 35.8,
+        "p95": 46.6
+      },
+      "yolo_total": {
+        "p50": 41.0,
+        "p95": 51.3
+      },
+      "vision_total": {
+        "p50": 116.5,
+        "p95": 128.8
+      },
+      "fusion_severity": {
+        "p50": 7.8,
+        "p95": 20.3
+      },
+      "save": {
+        "p50": 57.6,
+        "p95": 70.1
+      },
+      "total": {
+        "p50": 185.4,
+        "p95": 207.1
+      }
+    }
+  },
+  "fabric": {
+    "n_val_good": 20,
+    "n_test": 105,
+    "phone_calibration": {
+      "threshold": 0.25836,
+      "p99": 0.19989,
+      "std": 0.05847,
+      "margin": 0.05847,
+      "mean": 0.07288,
+      "min": 0.0,
+      "max": 0.20944,
+      "n_frames": 20,
+      "rule": "p99 + max(1 x std, 10% x p99) of good-frame scores",
+      "id": "33e5ba15dfaf",
+      "ts": "2026-11-24T11:17:09"
+    },
+    "image_auroc_phone": 0.9144,
+    "image_auroc_laptop_16a8w": 0.917,
+    "false_alarms": "1/20",
+    "recall": "64/85",
+    "flagged_per_label": {
+      "color": "20/20",
+      "cut": "20/20",
+      "good": "1/20",
+      "hole": "14/15",
+      "thread": "10/30"
+    },
+    "dispositions_per_label": {
+      "color": {
+        "HOLD": 20
+      },
+      "cut": {
+        "REWORK": 10,
+        "HOLD": 7,
+        "SCRAP": 3
+      },
+      "good": {
+        "PASS": 20
+      },
+      "hole": {
+        "HOLD": 11,
+        "REWORK": 4
+      },
+      "thread": {
+        "REWORK": 17,
+        "PASS": 13
+      }
+    },
+    "latency_ms": {
+      "square": {
+        "p50": 0.0,
+        "p95": 0.0
+      },
+      "pre_anomaly": {
+        "p50": 23.5,
+        "p95": 25.1
+      },
+      "npu": {
+        "p50": 115.9,
+        "p95": 116.9
+      },
+      "anomaly_total": {
+        "p50": 136.8,
+        "p95": 140.2
+      },
+      "pre_yolo": {
+        "p50": 28.1,
+        "p95": 33.5
+      },
+      "yolo_cpu": {
+        "p50": 40.9,
+        "p95": 48.3
+      },
+      "yolo_total": {
+        "p50": 46.2,
+        "p95": 52.8
+      },
+      "vision_total": {
+        "p50": 245.2,
+        "p95": 253.7
+      },
+      "fusion_severity": {
+        "p50": 27.0,
+        "p95": 42.5
+      },
+      "save": {
+        "p50": 51.2,
+        "p95": 71.7
+      },
+      "total": {
+        "p50": 324.0,
+        "p95": 339.4
+      }
+    }
+  }
+}

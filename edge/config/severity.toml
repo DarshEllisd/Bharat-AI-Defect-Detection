@@ -1,0 +1,48 @@
+# Severity rules (ADR-006: rule-based severity). Drafted by Claude, reviewed by the user 2026-11-24:
+#   - colour marks are capped at MEDIUM (-> REWORK): cleanable, never HOLD/SCRAP on their own;
+#   - YOLO-only detections are shown as notes and never change the verdict.
+#
+# How a defect's severity is decided (deterministic, explainable, unit-tested):
+#   level = base level of the defect type (1 LOW, 2 MEDIUM, 3 HIGH, 4 CRITICAL)
+#         + 1 if the defect is LARGE   (area >= large_area_frac of the inspected square)
+#         + 1 if the defect is STRONG  (peak anomaly score >= strong_ratio x the calibrated threshold)
+#         capped at 4, and at the type's `max` if it has one (e.g. colour marks).
+# The item's severity = its worst defect; the disposition follows from it (table below).
+# The defect type comes from YOLO when it names the region; a region YOLO can't name is "unknown_anomaly".
+
+levels = ["NONE", "LOW", "MEDIUM", "HIGH", "CRITICAL"]          # index = level
+
+[bumps]
+large_area_frac = 0.02      # >= 2% of the square (about a 3.5 cm patch on a 25 cm field of view)
+strong_ratio = 10.0         # peak score >= 10x the threshold = far outside normal variation. (3x fired for
+                            # almost every defect in the phone replay: median peaks were 15-44x the calibrated threshold.)
+
+[disposition]               # worst level -> what happens to the item
+NONE = "PASS"               # no defect found
+LOW = "REWORK"              # minor, cosmetic: touch-up / clean, then re-inspect
+MEDIUM = "REWORK"
+HIGH = "HOLD"               # quarantine for a QC person to decide
+CRITICAL = "SCRAP"
+
+[detector_only]             # YOLO box with high confidence but no anomaly support
+min_conf = 0.5
+counts_for_verdict = false  # user decision 2026-11-24: shown as a NOTE, never changes the verdict
+                            # (in testing YOLO alone flagged a good wood board as "liquid")
+
+# Base level per defect type, with the reasoning (please review / adjust).
+# Rule sets: products wood + mvtec_wood use "wood"; fabric + mvtec_carpet use "fabric" (categories.toml).
+[types.wood]
+scratch = { base = 1, why = "surface-only, cosmetic; can be sanded or refinished" }
+color = { base = 1, max = 2, why = "foreign colour mark (ink, pencil, surface stain); usually cleanable, so at most REWORK" }
+liquid = { base = 2, why = "soaked-in stain; may mean moisture exposure (swelling, mould risk), not just cosmetic" }
+hole = { base = 3, why = "material missing / possible through-hole; affects strength and appearance" }
+combined = { base = 3, why = "MVTec 'combined' = several defects together" }
+unknown_anomaly = { base = 2, why = "something unusual the detector can't name; a person should look" }
+
+[types.fabric]
+thread = { base = 1, why = "pulled loop / loose thread; can be trimmed or tucked back" }
+color = { base = 1, max = 2, why = "stain or dye mark; often washable, so at most REWORK" }
+cut = { base = 3, why = "fibres severed; will run or tear in use" }
+hole = { base = 3, why = "material missing; product fails in function and appearance" }
+metal_contamination = { base = 4, why = "foreign metal in a textile is a safety hazard (injury, machine damage)" }
+unknown_anomaly = { base = 2, why = "something unusual the detector can't name; a person should look" }

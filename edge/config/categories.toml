@@ -1,0 +1,46 @@
+# Products the inspector knows (week 4). TOML (read with Python's built-in tomllib: no extra package
+# needed in Termux). Model files are looked up in models_dir (phone: ~/bharatai/models_w3).
+# default_threshold = the laptop-derived 16a8w val threshold; used ONLY until the product is calibrated on
+# the phone (ADR-021), and inspections are then marked "uncalibrated".
+models_dir = "~/bharatai/models_w3"
+
+[yolo]
+pte = "yolo11n_combined_fp32_xnnpack.pte"   # XNNPACK fp32 on the CPU (P-62, P-65); output (1,52,2100), boxes in px
+input_px = 320
+conf = 0.116          # operating confidence = F1-max on val (week 3, YOLO v2)
+nms_iou = 0.5
+
+[products.wood]
+label = "Wood board (demo)"
+anomaly_pte = "efficientad_own_wood_16a8w_SSG2115P.pte"
+tiles = 1
+yolo_prefix = "wood_"
+default_threshold = 0.139
+rules = "wood"
+
+[products.fabric]
+label = "Looped fabric (demo)"
+anomaly_pte = "efficientad_fabric_teach_16a8w_SSG2115P.pte"   # taught on the stand (P-69)   # taught on the stand (P-69)
+tiles = 2                      # 2x2 tiles of 256 px (P-57)
+yolo_prefix = "fabric_"
+default_threshold = 0.213
+rules = "fabric"
+scale_px = [26, 56]   # from taught photos: median 41.0 px +/- 35% (P-70)
+
+[products.mvtec_wood]
+label = "MVTec wood (replay)"
+anomaly_pte = "efficientad_mvtec_wood_16a8w_SSG2115P.pte"
+tiles = 1
+yolo_prefix = "wood_"
+default_threshold = 2.177
+rules = "wood"
+replay_only = true
+
+[products.mvtec_carpet]
+label = "MVTec carpet (replay)"
+anomaly_pte = "efficientad_mvtec_carpet_16a8w_SSG2115P.pte"
+tiles = 1
+yolo_prefix = "carpet_"
+default_threshold = 0.147
+rules = "fabric"
+replay_only = true

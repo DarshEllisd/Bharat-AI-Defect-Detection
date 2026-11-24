@@ -1,0 +1,383 @@
+{
+  "categories": {
+    "cable": {
+      "train_good": 224,
+      "test_good": 58,
+      "test_defects": {
+        "bent_wire": 13,
+        "cable_swap": 12,
+        "combined": 11,
+        "cut_inner_insulation": 14,
+        "cut_outer_insulation": 10,
+        "missing_cable": 12,
+        "missing_wire": 10,
+        "poke_insulation": 10
+      }
+    },
+    "carpet": {
+      "train_good": 280,
+      "test_good": 28,
+      "test_defects": {
+        "color": 19,
+        "cut": 17,
+        "hole": 17,
+        "metal_contamination": 17,
+        "thread": 19
+      }
+    },
+    "grid": {
+      "train_good": 264,
+      "test_good": 21,
+      "test_defects": {
+        "bent": 12,
+        "broken": 12,
+        "glue": 11,
+        "metal_contamination": 11,
+        "thread": 11
+      }
+    },
+    "leather": {
+      "train_good": 245,
+      "test_good": 32,
+      "test_defects": {
+        "color": 19,
+        "cut": 19,
+        "fold": 17,
+        "glue": 19,
+        "poke": 18
+      }
+    },
+    "metal_nut": {
+      "train_good": 220,
+      "test_good": 22,
+      "test_defects": {
+        "bent": 25,
+        "color": 22,
+        "flip": 23,
+        "scratch": 23
+      }
+    },
+    "screw": {
+      "train_good": 320,
+      "test_good": 41,
+      "test_defects": {
+        "manipulated_front": 24,
+        "scratch_head": 24,
+        "scratch_neck": 25,
+        "thread_side": 23,
+        "thread_top": 23
+      }
+    },
+    "tile": {
+      "train_good": 230,
+      "test_good": 33,
+      "test_defects": {
+        "crack": 17,
+        "glue_strip": 18,
+        "gray_stroke": 16,
+        "oil": 18,
+        "rough": 15
+      }
+    },
+    "transistor": {
+      "train_good": 213,
+      "test_good": 60,
+      "test_defects": {
+        "bent_lead": 10,
+        "cut_lead": 10,
+        "damaged_case": 10,
+        "misplaced": 10
+      }
+    },
+    "wood": {
+      "train_good": 247,
+      "test_good": 19,
+      "test_defects": {
+        "color": 8,
+        "combined": 11,
+        "hole": 10,
+        "liquid": 10,
+        "scratch": 21
+      }
+    }
+  },
+  "classes": [
+    "cable_bent_wire",
+    "cable_cable_swap",
+    "cable_cut_inner_insulation",
+    "cable_cut_outer_insulation",
+    "cable_missing_cable",
+    "cable_missing_wire",
+    "cable_poke_insulation",
+    "carpet_color",
+    "carpet_cut",
+    "carpet_hole",
+    "carpet_metal_contamination",
+    "carpet_thread",
+    "grid_bent",
+    "grid_broken",
+    "grid_glue",
+    "grid_metal_contamination",
+    "grid_thread",
+    "leather_color",
+    "leather_cut",
+    "leather_fold",
+    "leather_glue",
+    "leather_poke",
+    "metal_nut_bent",
+    "metal_nut_color",
+    "metal_nut_flip",
+    "metal_nut_scratch",
+    "screw_manipulated_front",
+    "screw_scratch_head",
+    "screw_scratch_neck",
+    "screw_thread_side",
+    "screw_thread_top",
+    "tile_crack",
+    "tile_glue_strip",
+    "tile_gray_stroke",
+    "tile_oil",
+    "tile_rough",
+    "transistor_bent_lead",
+    "transistor_cut_lead",
+    "transistor_damaged_case",
+    "transistor_misplaced",
+    "wood_color",
+    "wood_hole",
+    "wood_liquid",
+    "wood_scratch",
+    "fabric_color",
+    "fabric_cut",
+    "fabric_hole",
+    "fabric_thread"
+  ],
+  "boxes_per_class_split": {
+    "cable_bent_wire": {
+      "train": 9,
+      "val": 3,
+      "test": 6
+    },
+    "cable_cable_swap": {
+      "train": 8,
+      "val": 2,
+      "test": 2
+    },
+    "cable_cut_inner_insulation": {
+      "train": 12,
+      "val": 5,
+      "test": 3
+    },
+    "cable_cut_outer_insulation": {
+      "train": 10,
+      "val": 5,
+      "test": 2
+    },
+    "cable_missing_cable": {
+      "train": 8,
+      "val": 2,
+      "test": 2
+    },
+    "cable_missing_wire": {
+      "train": 7,
+      "val": 3,
+      "test": 2
+    },
+    "cable_poke_insulation": {
+      "train": 13,
+      "val": 3,
+      "test": 3
+    },
+    "carpet_color": {
+      "train": 11,
+      "val": 7,
+      "test": 4
+    },
+    "carpet_cut": {
+      "train": 11,
+      "val": 3,
+      "test": 4
+    },
+    "carpet_hole": {
+      "train": 11,
+      "val": 3,
+      "test": 3
+    },
+    "carpet_metal_contamination": {
+      "train": 12,
+      "val": 3,
+      "test": 3
+    },
+    "carpet_thread": {
+      "train": 13,
+      "val": 4,
+      "test": 5
+    },
+    "grid_bent": {
+      "train": 26,
+      "val": 5,
+      "test": 5
+    },
+    "grid_broken": {
+      "train": 22,
+      "val": 6,
+      "test": 6
+    },
+    "grid_glue": {
+      "train": 10,
+      "val": 2,
+      "test": 2
+    },
+    "grid_metal_contamination": {
+      "train": 19,
+      "val": 2,
+      "test": 6
+    },
+    "grid_thread": {
+      "train": 43,
+      "val": 8,
+      "test": 8
+    },
+    "leather_color": {
+      "train": 13,
+      "val": 4,
+      "test": 4
+    },
+    "leather_cut": {
+      "train": 12,
+      "val": 4,
+      "test": 4
+    },
+    "leather_fold": {
+      "train": 11,
+      "val": 3,
+      "test": 3
+    },
+    "leather_glue": {
+      "train": 13,
+      "val": 4,
+      "test": 6
+    },
+    "leather_poke": {
+      "train": 10,
+      "val": 4,
+      "test": 4
+    },
+    "metal_nut_bent": {
+      "train": 23,
+      "val": 6,
+      "test": 6
+    },
+    "metal_nut_color": {
+      "train": 14,
+      "val": 6,
+      "test": 10
+    },
+    "metal_nut_flip": {
+      "train": 13,
+      "val": 5,
+      "test": 5
+    },
+    "metal_nut_scratch": {
+      "train": 23,
+      "val": 11,
+      "test": 10
+    },
+    "screw_manipulated_front": {
+      "train": 14,
+      "val": 5,
+      "test": 6
+    },
+    "screw_scratch_head": {
+      "train": 14,
+      "val": 5,
+      "test": 5
+    },
+    "screw_scratch_neck": {
+      "train": 18,
+      "val": 5,
+      "test": 6
+    },
+    "screw_thread_side": {
+      "train": 17,
+      "val": 6,
+      "test": 10
+    },
+    "screw_thread_top": {
+      "train": 13,
+      "val": 5,
+      "test": 5
+    },
+    "tile_crack": {
+      "train": 11,
+      "val": 3,
+      "test": 3
+    },
+    "tile_glue_strip": {
+      "train": 10,
+      "val": 4,
+      "test": 4
+    },
+    "tile_gray_stroke": {
+      "train": 10,
+      "val": 3,
+      "test": 3
+    },
+    "tile_oil": {
+      "train": 10,
+      "val": 4,
+      "test": 4
+    },
+    "tile_rough": {
+      "train": 9,
+      "val": 3,
+      "test": 5
+    },
+    "transistor_bent_lead": {
+      "train": 6,
+      "val": 3,
+      "test": 2
+    },
+    "transistor_cut_lead": {
+      "train": 6,
+      "val": 3,
+      "test": 2
+    },
+    "transistor_damaged_case": {
+      "train": 6,
+      "val": 3,
+      "test": 3
+    },
+    "transistor_misplaced": {
+      "train": 6,
+      "val": 2,
+      "test": 2
+    },
+    "wood_color": {
+      "train": 11,
+      "val": 4,
+      "test": 5
+    },
+    "wood_hole": {
+      "train": 16,
+      "val": 6,
+      "test": 6
+    },
+    "wood_liquid": {
+      "train": 12,
+      "val": 6,
+      "test": 3
+    },
+    "wood_scratch": {
+      "train": 33,
+      "val": 10,
+      "test": 12
+    }
+  },
+  "images_per_split": {
+    "test": 296,
+    "train": 811,
+    "val": 181
+  },
+  "dropped_specks": 1,
+  "missing_masks": []
+}

@@ -1,0 +1,21 @@
+I 00:00:00.000693 executorch:qnn_executor_runner.cpp:335] Model file /data/local/tmp/bharatai_npu/models/probe_fp16_SM8350.pte is loaded.
+I 00:00:00.000736 executorch:qnn_executor_runner.cpp:345] Using method forward
+I 00:00:00.000743 executorch:qnn_executor_runner.cpp:392] Setting up planned buffer 0, size 602160.
+[INFO] [Qnn ExecuTorch]: Deserializing processed data using QnnContextCustomProtocol
+[INFO] [Qnn ExecuTorch]: Creating new backend bundle.
+[INFO] [Qnn ExecuTorch]: create QNN Logger with log_level 1
+[INFO] [Qnn ExecuTorch]: Initialize Qnn backend parameters for Qnn executorch backend type 2
+[INFO] [Qnn ExecuTorch]: Caching: Caching is in RESTORE MODE.
+[INFO] [Qnn ExecuTorch]: QnnContextCustomProtocol expected magic number: 0x5678abcd but get: 0x2000000
+[ERROR] [Qnn ExecuTorch]: QnnDsp <E> Request feature vtcm size with value 4194304 unsupported
+
+[ERROR] [Qnn ExecuTorch]: QnnDsp <E> Failed to register context to device and backend
+
+[ERROR] [Qnn ExecuTorch]: QnnDsp <E> Failed to create context from binary with err 0x138d
+
+[ERROR] [Qnn ExecuTorch]: Can't create context from binary. Error 5005.
+E 00:00:00.196387 executorch:QnnManager.cpp:273] Fail to configure Qnn context
+E 00:00:00.196393 executorch:QnnExecuTorchBackend.cpp:99] Fail to initialize Qnn Manager
+E 00:00:00.196398 executorch:method.cpp:132] Init failed for backend QnnBackend: 0x1
+F 00:00:00.196448 executorch:qnn_executor_runner.cpp:415] In function main(), assert failed (method.ok()): Loading of method forward failed with status 0x1
+Aborted 

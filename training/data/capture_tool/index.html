@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Sample Capture</title>
+<style>
+  :root { --bg: #111; --fg: #eee; --muted: #9aa; --accent: #e8601c; --ok: #2e9d5b; --warn: #c9a227; --card: #1d1d1d; }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 10px; background: var(--bg); color: var(--fg); font-family: system-ui, sans-serif; }
+  header { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  select, button { font-size: 16px; border-radius: 8px; border: 0; padding: 10px 12px; }
+  select { background: var(--card); color: var(--fg); }
+  button { background: #333; color: var(--fg); }
+  button:disabled { opacity: .4; }
+  #status { color: var(--muted); font-size: 13px; flex: 1 1 100%; }
+  .stage { position: relative; margin: 8px 0; background: #000; border-radius: 8px; overflow: hidden; }
+  video { display: block; width: 100%; max-height: 52vh; object-fit: contain; }
+  #guide { position: absolute; border: 3px dashed var(--accent); pointer-events: none; }
+  #flash { position: absolute; inset: 0; background: #fff; opacity: 0; pointer-events: none; transition: opacity .15s; }
+  .labels { display: grid; grid-template-columns: repeat(auto-fit, minmax(96px, 1fr)); gap: 6px; }
+  .labels button { padding: 10px 6px; line-height: 1.25; }
+  .labels button.active { background: var(--accent); }
+  .labels small { display: block; color: #ddd; font-size: 12px; }
+  .done small { color: #8fe3a8 !important; }
+  .row { display: flex; gap: 8px; margin-top: 8px; align-items: center; flex-wrap: wrap; }
+  #shot { background: var(--ok); flex: 2; font-size: 20px; padding: 14px; }
+  #burst { flex: 1; }
+  #instance-row { background: var(--card); border-radius: 8px; padding: 8px 10px; }
+  #instance-row b { font-size: 18px; }
+  #toast { color: var(--muted); font-size: 13px; min-height: 1.2em; margin-top: 6px; }
+  #thumb { width: 64px; height: 64px; object-fit: cover; border-radius: 6px; background: #222; }
+</style>
+</head>
+<body>
+<header>
+  <select id="product"></select>
+  <button id="lock" title="Lock exposure, focus and white balance">Lock camera</button>
+  <div id="status">Opening camera…</div>
+</header>
+
+<div class="stage">
+  <video id="video" autoplay playsinline muted></video>
+  <div id="guide"></div>
+  <div id="flash"></div>
+</div>
+
+<div class="labels" id="labels"></div>
+
+<div class="row" id="instance-row">
+  <span>Defect instance <b id="instance">–</b></span>
+  <button id="new-instance">New defect</button>
+  <span style="color:var(--muted);font-size:13px">Press for each new physical defect; take ~3 photos of each.</span>
+</div>
+
+<div class="row">
+  <button id="shot" disabled>Shot</button>
+  <button id="burst" disabled>Burst ×5</button>
+  <button id="undo">Undo</button>
+  <img id="thumb" alt="">
+</div>
+<div id="toast"></div>
+
+<script>
+const $ = id => document.getElementById(id);
+const video = $("video"), canvas = document.createElement("canvas");
+let cfg, counts = {}, track = null, locked = false, busy = false;
+let product = null, label = "good";
+const instance = {};        // current defect instance per "product/label"
+const GUIDE_FRAC = 0.8;     // square guide side as a fraction of the shorter frame side
+
+function toast(msg) { $("toast").textContent = msg; }
+function key() { return `${product}/${label}`; }
+
+async function api(path, opts) {
+  const r = await fetch(path, opts);
+  const j = await r.json();
+  if (!r.ok) throw new Error(j.error || r.statusText);
+  return j;
+}
+
+// ---------- square guide: same geometry on screen and in saved-image pixels ----------
+function roiInFrame() {
+  const w = video.videoWidth, h = video.videoHeight, s = Math.round(Math.min(w, h) * GUIDE_FRAC);
+  return [Math.round((w - s) / 2), Math.round((h - s) / 2), s, s];
+}
+function placeGuide() {
+  if (!video.videoWidth) return;
+  const box = video.getBoundingClientRect(), stage = video.parentElement.getBoundingClientRect();
+  const scale = Math.min(box.width / video.videoWidth, box.height / video.videoHeight);  // object-fit: contain
+  const dw = video.videoWidth * scale, dh = video.videoHeight * scale;
+  const ox = box.left - stage.left + (box.width - dw) / 2, oy = box.top - stage.top + (box.height - dh) / 2;
+  const [x, y, s] = roiInFrame();
+  Object.assign($("guide").style, { left: `${ox + x * scale}px`, top: `${oy + y * scale}px`,
+                                    width: `${s * scale}px`, height: `${s * scale}px` });
+}
+window.addEventListener("resize", placeGuide);
+
+// ---------- labels, counts, instances ----------
+function renderLabels() {
+  const t = cfg.targets, c = counts[product] || {};
+  $("labels").innerHTML = "";
+  for (const l of cfg.products[product]) {
+    const n = c[l] || { photos: 0, instances: 0 };
+    const done = l === "good" ? n.photos >= t.good
+                              : n.photos >= t.defect_photos && n.instances >= t.defect_instances;
+    const sub = l === "good" ? `${n.photos}/${t.good}` : `${n.photos} photos · ${n.instances} defects`;
+    const b = document.createElement("button");
+    b.className = (l === label ? "active " : "") + (done ? "done" : "");
+    b.innerHTML = `${l}<small>${sub}</small>`;
+    b.onclick = () => { label = l; ensureInstance(); renderLabels(); };
+    $("labels").appendChild(b);
+  }
+  const isDefect = label !== "good";
+  $("instance-row").style.display = isDefect ? "flex" : "none";
+  $("instance").textContent = isDefect ? `#${instance[key()]}` : "–";
+}
+function ensureInstance() {
+  if (label === "good" || instance[key()]) return;
+  const max = ((counts[product] || {})[label] || {}).max_instance || 0;
+  instance[key()] = Math.max(1, max);   // continue the last defect after a reload
+}
+$("new-instance").onclick = () => {
+  const max = ((counts[product] || {})[label] || {}).max_instance || 0;
+  instance[key()] = Math.max(max, instance[key()] || 0) + 1;
+  renderLabels();
+  toast(`New defect #${instance[key()]}: make it, then take ~3 photos.`);
+};
+
+// ---------- capture ----------
+async function captureOne(seq) {
+  canvas.width = video.videoWidth; canvas.height = video.videoHeight;
+  canvas.getContext("2d").drawImage(video, 0, 0);
+  const blob = await new Promise(r => canvas.toBlob(r, "image/jpeg", 0.92));
+  const s = track.getSettings ? track.getSettings() : {};
+  const meta = { roi_xywh: roiInFrame(), frame_wh: [canvas.width, canvas.height], camera_locked: locked,
+                 camera: { exposureMode: s.exposureMode, focusMode: s.focusMode,
+                           whiteBalanceMode: s.whiteBalanceMode, frameRate: s.frameRate } };
+  const q = new URLSearchParams({ product, label, seq: String(seq) });
+  if (label !== "good") q.set("instance", String(instance[key()]));
+  const j = await api(`/api/capture?${q}`, { method: "POST", body: blob,
+                       headers: { "Content-Type": "image/jpeg", "X-Capture-Meta": JSON.stringify(meta) } });
+  counts = j.counts;
+  $("thumb").src = URL.createObjectURL(blob);
+  $("flash").style.opacity = .6; setTimeout(() => $("flash").style.opacity = 0, 120);
+  if (navigator.vibrate) navigator.vibrate(40);
+  return j.saved;
+}
+async function capture(n) {
+  if (busy) return;
+  busy = true; $("shot").disabled = $("burst").disabled = true;
+  try {
+    let last;
+    for (let i = 0; i < n; i++) {
+      last = await captureOne(i);
+      if (i < n - 1) await new Promise(r => setTimeout(r, 350));
+    }
+    toast(`Saved ${n > 1 ? n + " photos, last " : ""}${last}`);
+  } catch (e) { toast("Error: " + e.message); }
+  busy = false; $("shot").disabled = $("burst").disabled = false;
+  renderLabels();
+}
+$("shot").onclick = () => capture(1);
+$("burst").onclick = () => capture(5);
+$("undo").onclick = async () => {
+  try {
+    const j = await api("/api/undo", { method: "POST" });
+    counts = j.counts; renderLabels();
+    toast(j.removed ? `Removed ${j.removed}` : "Nothing to undo (this session)");
+  } catch (e) { toast("Error: " + e.message); }
+};
+
+// ---------- camera lock (best effort: depends on what this phone exposes to Chrome) ----------
+$("lock").onclick = async () => {
+  if (!track || !track.getCapabilities) { toast("Camera lock not supported in this browser"); return; }
+  const caps = track.getCapabilities(), adv = {}, mode = locked ? "continuous" : "manual", got = [];
+  for (const k of ["exposureMode", "whiteBalanceMode", "focusMode"]) {
+    if (caps[k] && caps[k].includes(mode)) { adv[k] = mode; got.push(k.replace("Mode", "")); }
+  }
+  if (!got.length) { toast("This camera doesn't allow locking from the browser - keep the light constant instead"); return; }
+  try {
+    await track.applyConstraints({ advanced: [adv] });
+    locked = !locked;
+    $("lock").textContent = locked ? "Unlock camera" : "Lock camera";
+    toast(`${locked ? "Locked" : "Unlocked"}: ${got.join(", ")}`);
+  } catch (e) { toast("Lock failed: " + e.message); }
+};
+
+// ---------- start ----------
+async function start() {
+  cfg = await api("/api/config");
+  counts = await api("/api/counts");
+  for (const p of Object.keys(cfg.products)) $("product").add(new Option(p, p));
+  product = $("product").value;
+  $("product").onchange = () => { product = $("product").value; label = "good"; renderLabels(); };
+  renderLabels();
+
+  const stream = await navigator.mediaDevices.getUserMedia({ audio: false,
+    video: { facingMode: { ideal: "environment" }, width: { ideal: 4096 }, height: { ideal: 4096 } } });
+  video.srcObject = stream;
+  track = stream.getVideoTracks()[0];
+  await video.play();
+  placeGuide();
+  try { await navigator.wakeLock.request("screen"); } catch (e) { /* optional */ }
+  $("status").textContent = `Camera ${video.videoWidth}×${video.videoHeight} · session ${cfg.session} · fill the dashed square with the material`;
+  $("shot").disabled = $("burst").disabled = false;
+}
+start().catch(e => { $("status").textContent = "Error: " + e.message + " (open via http://localhost, allow camera)"; });
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+# Knowledge base: looped fabric (demo product + MVTec carpet replay). Week 5 DRAFT for user review.
+# The advisor (Llama 3.2 1B) may ONLY recommend actions listed here, cited by id; anything else is rejected
+# and the templated fallback (first actions of each defect type) is used instead.
+
+[thread]
+causes = ["a loop snagged on a rough edge, hook or jewellery during handling",
+          "loose loop from weaving or a damaged needle",
+          "abrasion against a rough surface"]
+actions = [
+  { id = "F-T1", text = "Trim the pulled loop flush or tuck it back; do not cut neighbouring loops." },
+  { id = "F-T2", text = "Check handling surfaces, hooks and fixtures for burrs that snag loops." },
+  { id = "F-T3", text = "If pulled threads repeat, inspect the loom or needles for damage." },
+]
+
+[color]
+causes = ["stain from ink, dye, oil or dirt during handling or storage",
+          "dye transfer from another fabric",
+          "marking pen used on the visible face"]
+actions = [
+  { id = "F-C1", text = "Spot-clean the stain with a suitable cleaner and re-inspect after drying." },
+  { id = "F-C2", text = "Keep dyed or dirty items separated from finished fabric." },
+  { id = "F-C3", text = "Check gloves, tables and pens used near finished fabric." },
+]
+
+[cut]
+causes = ["blade or scissors contact during cutting or trimming",
+          "sharp edge on a table, fixture or packaging",
+          "tear started from a snag"]
+actions = [
+  { id = "F-K1", text = "Quarantine the piece; cuts will run in use and usually cannot be repaired invisibly." },
+  { id = "F-K2", text = "Inspect cutting tools, tables and fixtures for exposed blades or sharp edges." },
+  { id = "F-K3", text = "Review cutting and trimming steps for the operation that caused it." },
+]
+
+[hole]
+causes = ["broken threads from weaving or knitting faults",
+          "burn or abrasion damage",
+          "insect or wear damage in storage"]
+actions = [
+  { id = "F-H1", text = "Quarantine the piece for QC review; do not ship." },
+  { id = "F-H2", text = "Check the weaving or knitting machine for broken or worn components." },
+  { id = "F-H3", text = "Inspect storage for heat sources, abrasion points or pests." },
+]
+
+[metal_contamination]
+causes = ["metal fragment from a needle, staple, clip or machine part embedded in the textile"]
+actions = [
+  { id = "F-M1", text = "Remove the item from the line immediately and scrap it; metal in textiles is a safety hazard." },
+  { id = "F-M2", text = "Stop and check machines upstream for broken needles or missing metal parts." },
+  { id = "F-M3", text = "Run the batch through a metal detector if available and notify the supervisor." },
+]
+
+[unknown_anomaly]
+causes = ["an unusual appearance the detector cannot name: possible new defect type, a fold or lint on the fabric, or a lighting/placement change"]
+actions = [
+  { id = "F-U1", text = "Smooth the fabric flat, remove lint or debris, and inspect again." },
+  { id = "F-U2", text = "If the area is a real defect, set the piece aside for QC review." },
+  { id = "F-U3", text = "If many good pieces are flagged, re-check the lamp and camera position and re-calibrate." },
+]

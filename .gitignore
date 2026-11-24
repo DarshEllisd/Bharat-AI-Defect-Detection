@@ -1,0 +1,28 @@
+# Large build outputs and third-party binaries (models, Qualcomm QNN/SNPE libraries, prebuilt runners)
+spike/artifacts/
+*.pte
+*.pt
+*.pth
+*.onnx
+*.so
+*.bin
+
+# Python / tooling caches
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+
+# Editor settings (contain local paths)
+.vscode/
+
+# Secrets and local state
+*.env
+credentials*
+*.db
+*.sqlite
+*.sqlite3
+
+# Third-party challenge document
+AIBharat P5 - Google Docs.pdf

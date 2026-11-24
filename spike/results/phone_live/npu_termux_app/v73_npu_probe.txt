@@ -1,0 +1,65 @@
+== NPU probe Sun Nov  1 21:23:07 IST 2026 as u0_a432 context=u:r:untrusted_app_27:s0:c176,c257,c512,c768
+
+== 1. Device facts
+ro.soc.manufacturer=QTI
+ro.soc.model=SM7550
+ro.board.platform=crow
+ro.hardware=qcom
+soc0/soc_id=608
+soc0/family=Snapdragon
+FastRPC device nodes:
+ls: cannot access '/dev/fastrpc*': No such file or directory
+ls: cannot access '/dev/adsprpc-smd*': No such file or directory
+libcdsprpc (CPU-side DSP RPC library):
+-rw-r--r--. 1 root root 446632 Sep 19  2024 /vendor/lib64/libcdsprpc.so
+libcdsprpc exposed to apps (public.libraries):
+libcdsprpc.so
+Vendor-shipped HTP/QNN/SNPE libraries (their names reveal the Hexagon version, e.g. V73):
+  /odm/lib64/libQnnCpu.so
+  /odm/lib64/libQnnGpu.so
+  /odm/lib64/libQnnHtp.so
+  /odm/lib64/libQnnHtpPrepare.so
+  /odm/lib64/libQnnHtpV68Stub.so
+  /odm/lib64/libQnnHtpV69Stub.so
+  /odm/lib64/libQnnHtpV73CalculatorStub.so
+  /odm/lib64/libQnnHtpV73Stub.so
+  /odm/lib64/libQnnSaver.so
+  /odm/lib64/libQnnSystem.so
+  /odm/lib64/libSNPE.so
+  /odm/lib64/libSNPE_G.so
+  /odm/lib64/libSnpeHta.so
+  /odm/lib64/libSnpeHtpPrepare.so
+  /odm/lib64/libSnpeHtpV68Stub.so
+  /odm/lib64/libSnpeHtpV69Stub.so
+  /odm/lib64/libSnpeHtpV73Stub.so
+  /odm/lib64/libaiboost_qnn_external_delegate_te.so
+  /odm/lib64/libarcsoft_qnnhtp.so
+  /odm/lib64/libcalculator_htp.so
+  /odm/lib64/libhta_hexagon_runtime.so
+  /odm/lib64/libhta_hexagon_runtime_snpe.so
+  /odm/lib64/libsnpe_dsp_domains_v2.so
+  /odm/lib64/libsnpe_loader.so
+  /odm/lib64/libsnpeml.so
+
+== 2. qnn-platform-validator (one run per Hexagon generation's skeleton libraries)
+validator skel=v66 rc=0 :: PF_VALIDATOR: ERROR: Missing shared libraries: libadsprpc_system.so,libcdsprpc_system.so,libadsprpc.so,libcdsprpc.so PF_VALIDATOR: ERROR: Some shared libraries required for QNN DSP are missing   Backend Hardware  : Supported   Library Version   : Not Found   Core Version      : Not Found   Unit Test         : Failed 
+validator skel=v68 rc=0 :: PF_VALIDATOR: ERROR: Missing shared libraries: libadsprpc_system.so,libcdsprpc_system.so,libadsprpc.so,libcdsprpc.so PF_VALIDATOR: ERROR: Some shared libraries required for QNN DSP are missing   Backend Hardware  : Supported   Library Version   : Not Found   Core Version      : Not Found   Unit Test         : Failed 
+validator skel=v69 rc=0 :: PF_VALIDATOR: ERROR: Missing shared libraries: libadsprpc_system.so,libcdsprpc_system.so,libadsprpc.so,libcdsprpc.so PF_VALIDATOR: ERROR: Some shared libraries required for QNN DSP are missing   Backend Hardware  : Supported   Library Version   : Not Found   Core Version      : Not Found   Unit Test         : Failed 
+validator skel=v73 rc=0 :: PF_VALIDATOR: ERROR: Missing shared libraries: libadsprpc_system.so,libcdsprpc_system.so,libadsprpc.so,libcdsprpc.so PF_VALIDATOR: ERROR: Some shared libraries required for QNN DSP are missing   Backend Hardware  : Supported   Library Version   : Not Found   Core Version      : Not Found   Unit Test         : Failed 
+validator skel=v75 rc=0 :: PF_VALIDATOR: ERROR: Missing shared libraries: libadsprpc_system.so,libcdsprpc_system.so,libadsprpc.so,libcdsprpc.so PF_VALIDATOR: ERROR: Some shared libraries required for QNN DSP are missing   Backend Hardware  : Supported   Library Version   : Not Found   Core Version      : Not Found   Unit Test         : Failed 
+validator skel=v79 rc=0 :: PF_VALIDATOR: ERROR: Missing shared libraries: libadsprpc_system.so,libcdsprpc_system.so,libadsprpc.so,libcdsprpc.so PF_VALIDATOR: ERROR: Some shared libraries required for QNN DSP are missing   Backend Hardware  : Supported   Library Version   : Not Found   Core Version      : Not Found   Unit Test         : Failed 
+
+== 3. ExecuTorch QNN-delegated models
+probe_int8_SSG2115P (as SSG2115P, htp v73): rc=0 avg 0.263100 ms  :: I 00:00:00.164304 executorch:qnn_executor_runner.cpp:476] ignoring error from set_output_data_ptr(): 0x2 
+yolo320_int8_SSG2115P (as SSG2115P, htp v73): rc=0 avg 1.812900 ms  :: I 00:00:00.183872 executorch:qnn_executor_runner.cpp:476] ignoring error from set_output_data_ptr(): 0x2 
+
+== Output check vs CPU reference
+name,soc,htp,exit_code,avg_ms,cosine,max_abs_diff,verdict
+probe_int8_SSG2115P,SSG2115P,v73,0,0.263,1.0000,7.451e-09,PASS
+yolo320_int8_SSG2115P,SSG2115P,v73,0,1.813,0.9934,118.2,PASS
+
+VERDICT: the NPU is usable through ExecuTorch on this phone with these stand-in chipsets:
+  probe_int8_SSG2115P  avg 0.263 ms
+  yolo320_int8_SSG2115P  avg 1.813 ms
+
+Report: /data/data/com.termux/files/home/bharatai/results/npu_v73_app/npu_probe.txt

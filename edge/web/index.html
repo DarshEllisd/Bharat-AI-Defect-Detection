@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Edge Inspector</title>
+<style>
+  :root { --bg:#111418; --panel:#1b2027; --text:#e8ecf1; --muted:#9aa5b1; --line:#2c333d;
+          --pass:#1f9d55; --rework:#d69e2e; --hold:#dd6b20; --scrap:#c53030; --accent:#3182ce; --note:#4a5568; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:15px/1.4 system-ui, sans-serif; }
+  header { position:sticky; top:0; z-index:5; display:flex; gap:8px; align-items:center; padding:8px 10px;
+           background:var(--panel); border-bottom:1px solid var(--line); flex-wrap:wrap; }
+  header h1 { font-size:16px; margin:0 4px 0 0; }
+  select, button, input[type=text] { font:inherit; color:var(--text); background:#252c35; border:1px solid var(--line);
+           border-radius:8px; padding:8px 12px; }
+  button.primary { background:var(--accent); border-color:var(--accent); font-weight:700; }
+  button:disabled { opacity:.5; }
+  .chip { font-size:12px; padding:3px 8px; border-radius:6px; white-space:nowrap; }
+  .chip.ok { background:#1c3b2b; color:#9ae6b4; } .chip.no { background:#3b1c1c; color:#feb2b2; }
+  nav { display:flex; gap:4px; margin-left:auto; }
+  nav button { padding:6px 12px; } nav button.on { background:var(--accent); border-color:var(--accent); }
+  .tab { display:none; } .tab.on { display:block; }
+  main { padding:10px; max-width:1100px; margin:auto; }
+  .grid { display:grid; grid-template-columns:1fr; gap:10px; }
+  @media (min-width: 900px) { .grid { grid-template-columns:1.05fr 1fr; } }
+  .panel { background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:10px; }
+  #stage { position:relative; background:#000; border-radius:8px; overflow:hidden; aspect-ratio:3/4; max-height:56vh; margin:auto; }
+  video { width:100%; height:100%; object-fit:contain; display:block; }
+  #guide { position:absolute; border:2px dashed #fff8; pointer-events:none; }
+  #inspect { width:100%; padding:18px; font-size:20px; margin-top:10px; }
+  .row { display:flex; gap:8px; margin-top:8px; } .row button { flex:1; }
+  #banner { font-size:30px; font-weight:800; text-align:center; padding:16px 10px; border-radius:10px; background:#252c35; }
+  #banner small { display:block; font-size:14px; font-weight:500; opacity:.9; }
+  .PASS { background:var(--pass) !important; } .REWORK { background:var(--rework) !important; }
+  .HOLD { background:var(--hold) !important; } .SCRAP { background:var(--scrap) !important; } .RETAKE { background:var(--note) !important; }
+  .meta { color:var(--muted); font-size:13px; margin:6px 0; }
+  table { width:100%; border-collapse:collapse; font-size:13px; }
+  td, th { text-align:left; padding:5px 6px; border-bottom:1px solid var(--line); vertical-align:top; }
+  .sev { font-weight:700; } .sev.LOW{color:#f6e05e} .sev.MEDIUM{color:#f6ad55} .sev.HIGH{color:#fc8181}
+  .sev.CRITICAL{color:#d6bcfa} .sev.NOTE{color:var(--muted)}
+  .reasons { color:var(--muted); font-size:12px; }
+  #ackbox { display:none; gap:8px; margin-top:8px; } #ackbox input { flex:1; }
+  #acked { display:none; margin-top:8px; padding:8px; border-radius:8px; background:#1c3b2b; color:#9ae6b4; font-size:14px; }
+  .advice { margin-top:10px; padding:10px; border-radius:8px; background:#1d2833; border:1px solid var(--line); }
+  .advice ol { margin:6px 0 0 18px; padding:0; } .advice li { margin:4px 0; }
+  .tag { font-size:11px; padding:1px 6px; border-radius:4px; background:#2d3748; margin-left:6px; }
+  #shot { width:100%; border-radius:8px; margin-top:8px; display:none; }
+  .speed { display:flex; height:10px; border-radius:5px; overflow:hidden; margin-top:4px; background:#252c35; }
+  .speed span { display:block; height:100%; }
+  .legend { font-size:11px; color:var(--muted); display:flex; flex-wrap:wrap; gap:8px; margin-top:4px; }
+  .legend i { display:inline-block; width:9px; height:9px; border-radius:2px; margin-right:3px; vertical-align:middle; }
+  .logrow { cursor:pointer; } .logrow:hover { background:#222933; }
+  .vchip { display:inline-block; font-size:12px; font-weight:700; padding:2px 7px; border-radius:5px; }
+  .tiles { display:grid; grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); gap:8px; }
+  .tile { background:#222933; border-radius:8px; padding:10px; } .tile b { display:block; font-size:24px; }
+  .bar { display:flex; align-items:center; gap:8px; margin:4px 0; font-size:13px; }
+  .bar .fill { height:14px; border-radius:3px; background:var(--accent); }
+  .bar .lbl { width:110px; color:var(--muted); } .bar .n { width:40px; text-align:right; }
+  #toast { position:fixed; left:50%; bottom:14px; transform:translateX(-50%); background:#000d; padding:10px 16px;
+           border-radius:8px; display:none; z-index:10; max-width:92vw; }
+  a { color:#90cdf4; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Edge Inspector</h1>
+  <select id="product" aria-label="Product"></select>
+  <span id="cal" class="chip">-</span>
+  <button id="sound" title="Sound alerts on/off">🔊</button>
+  <nav>
+    <button data-tab="t-inspect" class="on">Inspect</button>
+    <button data-tab="t-log">Log <span id="openn" class="tag" style="display:none"></span></button>
+    <button data-tab="t-stats">Stats</button>
+  </nav>
+</header>
+
+<main>
+  <!-- ======================== INSPECT ======================== -->
+  <div id="t-inspect" class="tab on">
+    <div class="grid">
+      <section class="panel">
+        <div id="stage"><video id="video" playsinline muted></video><div id="guide"></div></div>
+        <button id="inspect" class="primary" disabled>INSPECT</button>
+        <div class="row">
+          <button id="calibrate">Calibrate</button>
+          <button id="teach" title="Take 60 photos of GOOD material on the stand to retrain the model for this setup">Teach good</button>
+          <button id="lock" title="Lock exposure / white balance / focus so lighting stays constant">Lock camera</button>
+        </div>
+        <div class="meta" id="status">Starting camera...</div>
+      </section>
+      <section class="panel">
+        <div id="banner">Ready<small>place an item in the square and press INSPECT</small></div>
+        <div class="meta" id="rmeta"></div>
+        <table id="defects"></table>
+        <div id="ackbox"><input type="text" id="acknote" placeholder="note (optional), e.g. moved to QC rack">
+          <button id="ack" class="primary">Acknowledge</button></div>
+        <div id="acked"></div>
+        <div id="advice" class="advice" style="display:none">
+          <div class="meta" id="advsrc">Advice</div>
+          <div id="advsum"></div><div class="reasons" id="advcause"></div>
+          <ol id="advacts"></ol>
+        </div>
+        <label class="meta"><input type="checkbox" id="showheat" checked> show heatmap</label>
+        <img id="shot" alt="inspected image">
+        <div id="speedbox" style="display:none">
+          <div class="meta" id="speedtxt"></div>
+          <div class="speed" id="speedbar"></div>
+          <div class="legend" id="speedlegend"></div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- ======================== LOG ======================== -->
+  <div id="t-log" class="tab">
+    <section class="panel">
+      <div class="row" style="margin-top:0">
+        <select id="fdisp"><option value="">all verdicts</option><option>PASS</option><option>REWORK</option>
+          <option>HOLD</option><option>SCRAP</option></select>
+        <a href="/api/export.csv" style="align-self:center">export CSV</a>
+        <a href="/api/export.json" style="align-self:center">export JSON</a>
+      </div>
+      <table id="log" style="margin-top:8px"></table>
+      <button id="more" style="width:100%; margin-top:8px">Load more</button>
+    </section>
+  </div>
+
+  <!-- ======================== STATS ======================== -->
+  <div id="t-stats" class="tab">
+    <section class="panel">
+      <div class="row" style="margin-top:0">
+        <select id="period"><option value="1">today</option><option value="0">all time</option></select>
+      </div>
+      <div class="tiles" id="tiles" style="margin-top:8px"></div>
+      <div class="meta" style="margin-top:12px">Verdicts</div><div id="dispbars"></div>
+      <div class="meta" style="margin-top:12px">Defect types</div><div id="typebars"></div>
+    </section>
+  </div>
+</main>
+<div id="toast"></div>
+
+<script>
+const $ = id => document.getElementById(id);
+const video = $("video"), canvas = document.createElement("canvas");
+const GUIDE_FRAC = 0.8;             // same square as the capture tool (training photos), ADR-020
+const CAL_FRAMES = 20, CAL_GAP_MS = 400, TEACH_FRAMES = 60;
+const COLORS = { PASS: "#1f9d55", REWORK: "#d69e2e", HOLD: "#dd6b20", SCRAP: "#c53030" };
+let products = [], busy = false, last = null, track = null, locked = false, logOffset = 0;
+let soundOn = true; try { soundOn = localStorage.getItem("sound") !== "off"; } catch (e) { /* optional */ }
+
+function toast(m, ms = 2500) { const t = $("toast"); t.textContent = m; t.style.display = "block"; clearTimeout(t._h); t._h = setTimeout(() => t.style.display = "none", ms); }
+async function api(path, opts) {
+  const r = await fetch(path, opts);
+  if (!r.ok) throw new Error(await r.text());
+  return r.headers.get("content-type")?.includes("json") ? r.json() : r.text();
+}
+// A frame the server can't judge (too dark / wrong camera distance, P-68) comes back as HTTP 422 {retake, message}.
+async function post(path, blob) {
+  const r = await fetch(path, { method: "POST", body: blob, headers: { "Content-Type": "image/jpeg", "X-Roi": roiInFrame().join(",") } });
+  if (r.status === 422) return r.json();
+  if (!r.ok) throw new Error(await r.text());
+  return r.json();
+}
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+// ---------------- tabs ----------------
+document.querySelectorAll("nav button").forEach(b => b.onclick = () => showTab(b.dataset.tab));
+function showTab(id) {
+  document.querySelectorAll("nav button").forEach(b => b.classList.toggle("on", b.dataset.tab === id));
+  document.querySelectorAll(".tab").forEach(t => t.classList.toggle("on", t.id === id));
+  if (id === "t-log") { logOffset = 0; loadLog(false); }
+  if (id === "t-stats") loadStats();
+  if (id === "t-inspect") placeGuide();
+}
+
+// ---------------- sound alerts (Web Audio, offline) ----------------
+let actx = null;
+function beep(freq, ms, at = 0, type = "sine") {
+  actx = actx || new (window.AudioContext || window.webkitAudioContext)();
+  const o = actx.createOscillator(), g = actx.createGain(), t0 = actx.currentTime + at / 1000;
+  o.type = type; o.frequency.value = freq; o.connect(g); g.connect(actx.destination);
+  g.gain.setValueAtTime(0.0001, t0); g.gain.exponentialRampToValueAtTime(0.3, t0 + 0.01);
+  g.gain.exponentialRampToValueAtTime(0.0001, t0 + ms / 1000); o.start(t0); o.stop(t0 + ms / 1000 + 0.02);
+}
+function alertFor(disp) {
+  const pat = { PASS: [[880, 120, 0]], REWORK: [[660, 140, 0], [660, 140, 200]],
+                HOLD: [[440, 180, 0], [440, 180, 250], [440, 180, 500]],
+                SCRAP: [[330, 450, 0, "square"], [330, 450, 600, "square"]], RETAKE: [[300, 120, 0], [300, 120, 180]] }[disp] || [];
+  if (soundOn) try { pat.forEach(([f, ms, at, ty]) => beep(f, ms, at, ty)); } catch (e) { /* audio unavailable */ }
+  if (navigator.vibrate) navigator.vibrate({ PASS: 40, REWORK: [80, 60, 80], HOLD: [150, 80, 150], SCRAP: [400, 120, 400], RETAKE: [60, 60, 60] }[disp] || 0);
+}
+function renderSound() { $("sound").textContent = soundOn ? "🔊" : "🔇"; }
+$("sound").onclick = () => { soundOn = !soundOn; try { localStorage.setItem("sound", soundOn ? "on" : "off"); } catch (e) {} renderSound(); if (soundOn) alertFor("PASS"); };
+renderSound();
+
+// ---------------- camera + square guide ----------------
+function roiInFrame() {
+  const w = video.videoWidth, h = video.videoHeight, s = Math.round(Math.min(w, h) * GUIDE_FRAC);
+  return [Math.round((w - s) / 2), Math.round((h - s) / 2), s, s];
+}
+function placeGuide() {
+  if (!video.videoWidth) return;
+  const box = video.getBoundingClientRect(), stage = video.parentElement.getBoundingClientRect();
+  const scale = Math.min(box.width / video.videoWidth, box.height / video.videoHeight);
+  const dw = video.videoWidth * scale, dh = video.videoHeight * scale;
+  const ox = box.left - stage.left + (box.width - dw) / 2, oy = box.top - stage.top + (box.height - dh) / 2;
+  const [x, y, s] = roiInFrame();
+  Object.assign($("guide").style, { left: `${ox + x * scale}px`, top: `${oy + y * scale}px`, width: `${s * scale}px`, height: `${s * scale}px` });
+}
+window.addEventListener("resize", placeGuide);
+async function grab() {           // full frame, JPEG 0.92 - exactly like the training / teach photos
+  canvas.width = video.videoWidth; canvas.height = video.videoHeight;
+  canvas.getContext("2d").drawImage(video, 0, 0);
+  return new Promise(r => canvas.toBlob(r, "image/jpeg", 0.92));
+}
+
+// ---------------- products + calibration chip ----------------
+const product = () => $("product").value;
+const productLabel = () => (products.find(x => x.id === product()) || {}).label || product();
+function renderCal() {
+  const p = products.find(x => x.id === product()), c = p && p.calibration, el = $("cal");
+  if (c) { el.className = "chip ok"; el.textContent = `calibrated ${c.ts.slice(5, 16).replace("T", " ")} · thr ${c.threshold.toFixed(3)}`; }
+  else { el.className = "chip no"; el.textContent = "NOT calibrated"; }
+}
+async function loadProducts() {
+  products = await api("/api/products");
+  const sel = $("product"), cur = sel.value;
+  sel.innerHTML = "";
+  for (const p of products.filter(p => !p.replay_only)) sel.add(new Option(p.label, p.id));
+  let saved = null; try { saved = localStorage.getItem("product"); } catch (e) { /* optional */ }
+  if (cur) sel.value = cur; else if (saved && products.some(p => p.id === saved)) sel.value = saved;
+  renderCal();
+}
+$("product").onchange = () => { try { localStorage.setItem("product", product()); } catch (e) {} renderCal(); refreshOpen(); };
+function setBusy(b) { busy = b; for (const id of ["inspect", "calibrate", "teach", "lock"]) $(id).disabled = b; }
+
+// ---------------- calibrate (ADR-021, P-67/P-72) ----------------
+$("calibrate").onclick = async () => {
+  if (busy) return;
+  if (!confirm(`CALIBRATE: ${productLabel().toUpperCase()}\n\nIs that the material on the stand? If not, press Cancel and change the product at the top.\n\nPlace a GOOD item in the square. ${CAL_FRAMES} frames will be taken (~${Math.round(CAL_FRAMES * CAL_GAP_MS / 1000) + 24} s); every 5 frames you'll be asked to move it to a NEW SPOT, so the threshold learns the normal variety.`)) return;
+  setBusy(true);
+  try {
+    await api(`/api/calibrate/reset?product=${product()}`, { method: "POST" });
+    let rejected = 0;
+    for (let i = 0; i < CAL_FRAMES; i++) {
+      if (i > 0 && i % 5 === 0) {
+        toast("Move the GOOD item to a NEW SPOT (different area of the material)", 4000);
+        if (navigator.vibrate) navigator.vibrate([150, 80, 150]);
+        await new Promise(r => setTimeout(r, 4000));
+      }
+      const j = await post(`/api/calibrate/add?product=${product()}`, await grab());
+      if (j.retake) {
+        if (++rejected > 8) throw new Error(j.message + " (calibration stopped)");
+        toast(j.message, 3500); alertFor("RETAKE");
+        $("status").textContent = `Frame ${i + 1} rejected - ${j.message}`;
+        await new Promise(r => setTimeout(r, 3500)); i--; continue;
+      }
+      $("status").textContent = `Calibrating ${i + 1}/${CAL_FRAMES} · score ${j.score.toFixed(3)}`;
+      await new Promise(r => setTimeout(r, CAL_GAP_MS));
+    }
+    const e = await api(`/api/calibrate/commit?product=${product()}`, { method: "POST" });
+    toast(`Calibrated: threshold ${e.threshold.toFixed(3)} (good scores ${e.min.toFixed(3)}-${e.max.toFixed(3)})`, 5000);
+    await loadProducts();
+    $("status").textContent = "Ready";
+  } catch (err) { toast("Calibration failed: " + err.message, 6000); }
+  setBusy(false);
+};
+
+// ---------------- teach good (P-69) ----------------
+$("teach").onclick = async () => {
+  if (busy) return;
+  if (!confirm(`TEACH GOOD for: ${productLabel().toUpperCase()}\n\nIs that the material on the stand? If not, press Cancel and change the product at the top.\n\nPlace GOOD material on the stand. ${TEACH_FRAMES} photos will be taken (~1.5 min); every 5 photos you'll be asked to move it to a new spot or rotate it. Lock the camera first for best results.`)) return;
+  setBusy(true);
+  const session = new Date().toISOString().slice(0, 19).replace(/[-:T]/g, "");
+  let rejected = 0;
+  try {
+    for (let i = 0; i < TEACH_FRAMES; i++) {
+      if (i > 0 && i % 5 === 0) {
+        toast("Move the GOOD material to a new spot / rotate it", 2500);
+        if (navigator.vibrate) navigator.vibrate(150);
+        await new Promise(r => setTimeout(r, 2500));
+      }
+      const j = await post(`/api/teach/add?product=${product()}&session=${session}`, await grab());
+      if (j.retake) {
+        if (++rejected > 15) throw new Error(j.message + " (stopped)");
+        toast(j.message, 3500); await new Promise(r => setTimeout(r, 3500)); i--; continue;
+      }
+      $("status").textContent = `Teaching ${i + 1}/${TEACH_FRAMES}` + (j.period ? ` · texture ${j.period} px` : "");
+      await new Promise(r => setTimeout(r, 300));
+    }
+    toast(`Saved ${TEACH_FRAMES} good photos (session ${session}). The model can now be retrained for this setup.`, 8000);
+    $("status").textContent = `Teach done: ${TEACH_FRAMES} photos, session ${session}`;
+  } catch (err) { toast("Teach failed: " + err.message, 6000); }
+  setBusy(false);
+};
+
+// ---------------- camera lock ----------------
+$("lock").onclick = async () => {
+  if (!track || !track.getCapabilities) { toast("Camera lock not supported in this browser"); return; }
+  const caps = track.getCapabilities(), adv = {}, mode = locked ? "continuous" : "manual", got = [];
+  for (const k of ["exposureMode", "whiteBalanceMode", "focusMode"]) {
+    if (caps[k] && caps[k].includes(mode)) { adv[k] = mode; got.push(k.replace("Mode", "")); }
+  }
+  if (!got.length) { toast("This camera can't be locked from the browser - keep the lamp constant instead"); return; }
+  try {
+    await track.applyConstraints({ advanced: [adv] });
+    locked = !locked; $("lock").textContent = locked ? "Unlock camera" : "Lock camera";
+    toast(`${locked ? "Locked" : "Unlocked"}: ${got.join(", ")}`);
+  } catch (e) { toast("Lock failed: " + e.message); }
+};
+
+// ---------------- inspect ----------------
+$("inspect").onclick = async () => {
+  if (busy) return;
+  setBusy(true);
+  const t0 = performance.now();
+  try {
+    const blob = await grab();
+    const tGrab = performance.now();
+    const r = await post(`/api/inspect?product=${product()}`, blob);
+    const tAll = performance.now();
+    if (r.retake) {
+      setBanner("RETAKE", "RETAKE", r.message); $("rmeta").textContent = ""; $("defects").innerHTML = "";
+      $("shot").style.display = $("advice").style.display = $("speedbox").style.display = "none";
+      $("ackbox").style.display = $("acked").style.display = "none";
+      alertFor("RETAKE"); setBusy(false); return;
+    }
+    showResult(r, { grab: tGrab - t0, total: tAll - t0 });
+    alertFor(r.disposition);
+    refreshOpen();
+  } catch (err) { toast("Inspection failed: " + err.message, 6000); }
+  setBusy(false);
+};
+
+function setBanner(cls, title, sub) {
+  const b = $("banner"); b.className = cls; b.innerHTML = `${esc(title)}<small>${esc(sub || "")}</small>`;
+}
+
+function showResult(r, client) {
+  last = r;
+  const sub = r.disposition === "PASS" ? "no defect found" : `${r.severity} · ${r.defects.filter(d => d.severity !== "NOTE").length} defect(s)`;
+  setBanner(r.disposition, r.disposition, `${sub} · ${r.ts.replace("T", " ")}`);
+  $("rmeta").innerHTML = `${esc(products.find(p => p.id === r.product)?.label || r.product)} · score ${r.image_score.toFixed(3)} / threshold ${r.threshold.toFixed(3)}` +
+    (r.calibrated ? "" : " <b>(uncalibrated)</b>");
+  $("defects").innerHTML = r.defects.length ? "<tr><th>defect</th><th>severity</th><th>size</th><th>why</th></tr>" + r.defects.map(d =>
+    `<tr><td>${esc(d.type.replace("_", " "))}<div class="reasons">${esc(d.source)}${d.yolo_conf ? " · yolo " + d.yolo_conf.toFixed(2) : ""}</div></td>` +
+    `<td class="sev ${d.severity}">${d.severity}</td><td>${(d.area_frac * 100).toFixed(2)}%</td>` +
+    `<td class="reasons">${d.reasons.map(esc).join("<br>")}</td></tr>`).join("") : "";
+  renderAck(r);
+  showShot();
+  renderAdvice(r.advice, r.id);
+  renderSpeed(r, client);
+}
+
+function renderAck(r) {
+  const needs = r.disposition !== "PASS";
+  $("ackbox").style.display = needs && !r.ack ? "flex" : "none";
+  $("acked").style.display = r.ack ? "block" : "none";
+  if (r.ack) $("acked").textContent = `Acknowledged ${r.ack.ts.slice(11, 16)}` + (r.ack.note ? ` · ${r.ack.note}` : "");
+  $("acknote").value = "";
+}
+$("ack").onclick = async () => {
+  if (!last) return;
+  try {
+    last.ack = await api(`/api/ack/${last.id}`, { method: "POST", headers: { "Content-Type": "application/json" },
+                                                    body: JSON.stringify({ note: $("acknote").value }) });
+    renderAck(last); refreshOpen(); toast("Acknowledged");
+  } catch (e) { toast("Acknowledge failed: " + e.message); }
+};
+
+function showShot() {
+  if (!last) return;
+  const img = $("shot"); img.style.display = "block";
+  img.src = $("showheat").checked ? last.heatmap_url : last.image_url;
+}
+$("showheat").onchange = showShot;
+
+let advTimer = null;
+function renderAdvice(a, id) {
+  const box = $("advice");
+  if (!a || !a.summary || (last && last.disposition === "PASS")) { box.style.display = "none"; return; }
+  box.style.display = "block";
+  const src = a.status === "pending" ? "instant advice · AI advice being written..."
+            : a.status === "llm" ? `AI advice · on-device Llama · ${a.seconds ? a.seconds.toFixed(0) + " s" : ""}`
+            : "advice from the knowledge base" + (a.note ? ` · ${a.note}` : "");
+  $("advsrc").innerHTML = `Advice <span class="tag">${esc(src)}</span>`;
+  $("advsum").textContent = a.summary; $("advcause").textContent = a.probable_cause || "";
+  $("advacts").innerHTML = (a.actions || []).map(x => `<li>${esc(x.text)} <span class="tag">${esc(x.id)}</span></li>`).join("");
+  clearTimeout(advTimer);
+  if (a.status === "pending") advTimer = setTimeout(async () => {
+    if (!last || last.id !== id) return;
+    try { last.advice = await api(`/api/advice/${id}`); renderAdvice(last.advice, id); } catch (e) { /* keep what we have */ }
+  }, 2000);
+}
+
+function renderSpeed(r, client) {
+  const t = r.timings_ms || {}, box = $("speedbox");
+  if (!client) { box.style.display = "none"; return; }
+  box.style.display = "block";
+  const server = t.total || 0, transfer = Math.max(0, client.total - client.grab - server);
+  const parts = [["camera grab", client.grab, "#805ad5"], ["upload", transfer, "#718096"], ["prepare", (t.square || 0) + (t.pre_anomaly || 0) + (t.pre_yolo || 0), "#4299e1"],
+                 ["NPU anomaly", t.npu || 0, "#38a169"], ["YOLO (CPU)", t.yolo_cpu || 0, "#d69e2e"],
+                 ["fusion + rules", t.fusion_severity || 0, "#e53e3e"], ["save + log", t.save || 0, "#a0aec0"]];
+  const other = Math.max(0, client.total - parts.reduce((s, p) => s + p[1], 0));
+  parts.push(["other", other, "#2d3748"]);
+  $("speedtxt").textContent = `press → verdict ${Math.round(client.total)} ms (phone server ${Math.round(server)} ms)`;
+  $("speedbar").innerHTML = parts.map(([n, ms, c]) => `<span title="${n} ${Math.round(ms)} ms" style="width:${(100 * ms / client.total).toFixed(1)}%;background:${c}"></span>`).join("");
+  $("speedlegend").innerHTML = parts.filter(p => p[1] >= 1).map(([n, ms, c]) => `<span><i style="background:${c}"></i>${n} ${Math.round(ms)}</span>`).join("");
+}
+
+// ---------------- log ----------------
+async function loadLog(append) {
+  const rows = await api(`/api/log?limit=25&offset=${logOffset}&product=${product()}&disposition=${$("fdisp").value}`);
+  const html = rows.map(r => `<tr class="logrow" data-id="${r.id}"><td>${r.ts.slice(5, 16).replace("T", " ")}</td>` +
+    `<td><span class="vchip" style="background:${COLORS[r.disposition] || "#4a5568"}">${r.disposition}</span></td>` +
+    `<td>${esc(r.defects.filter(d => d.severity !== "NOTE").map(d => d.type.replace("_", " ") + " " + d.severity).join(", ") || "-")}</td>` +
+    `<td>${r.disposition === "PASS" ? "" : r.ack ? "✓ ack" : "<b style='color:#feb2b2'>open</b>"}</td></tr>`).join("");
+  const head = "<tr><th>time</th><th>verdict</th><th>defects</th><th></th></tr>";
+  $("log").innerHTML = append ? $("log").innerHTML + html : head + html;
+  $("more").style.display = rows.length === 25 ? "block" : "none";
+  document.querySelectorAll(".logrow").forEach(tr => tr.onclick = () => openRecord(tr.dataset.id));
+}
+$("fdisp").onchange = () => { logOffset = 0; loadLog(false); };
+$("more").onclick = () => { logOffset += 25; loadLog(true); };
+async function openRecord(id) {
+  const r = await api(`/api/record/${id}`);
+  showTab("t-inspect"); showResult(r, null);
+}
+
+// ---------------- stats ----------------
+function bars(el, data, colorOf) {
+  const max = Math.max(1, ...Object.values(data));
+  $(el).innerHTML = Object.entries(data).map(([k, n]) =>
+    `<div class="bar"><span class="lbl">${esc(k.replace("_", " "))}</span><span class="fill" style="width:${(70 * n / max).toFixed(1)}%;background:${colorOf(k)}"></span><span class="n">${n}</span></div>`).join("")
+    || "<div class='meta'>none yet</div>";
+}
+async function loadStats() {
+  const s = await api(`/api/stats?product=${product()}&today=${$("period").value}`);
+  const tile = (label, value) => `<div class="tile">${label}<b>${value}</b></div>`;
+  $("tiles").innerHTML = tile("inspections", s.total) + tile("pass rate", s.pass_rate == null ? "-" : Math.round(100 * s.pass_rate) + "%") +
+    tile("open alerts", s.open_alerts) + tile("avg server time", s.avg_server_ms ? Math.round(s.avg_server_ms) + " ms" : "-") +
+    tile("AI advice", s.llm_advice ? `${s.llm_advice} · ${Math.round(s.avg_llm_seconds)} s` : "-");
+  const order = ["PASS", "REWORK", "HOLD", "SCRAP"], disp = {};
+  order.forEach(k => { if (s.by_disposition[k]) disp[k] = s.by_disposition[k]; });
+  bars("dispbars", disp, k => COLORS[k]);
+  bars("typebars", s.defect_types, () => "#3182ce");
+}
+$("period").onchange = loadStats;
+async function refreshOpen() {
+  try { const s = await api(`/api/stats?product=${product()}&today=1`); const el = $("openn");
+        el.style.display = s.open_alerts ? "inline" : "none"; el.textContent = s.open_alerts; } catch (e) { /* ignore */ }
+}
+
+// ---------------- start ----------------
+async function start() {
+  await loadProducts();
+  refreshOpen();
+  const stream = await navigator.mediaDevices.getUserMedia({ audio: false,
+    video: { facingMode: { ideal: "environment" }, width: { ideal: 4096 }, height: { ideal: 4096 } } });
+  video.srcObject = stream;
+  track = stream.getVideoTracks()[0];
+  await video.play();
+  placeGuide();
+  try { await navigator.wakeLock.request("screen"); } catch (e) { /* optional */ }
+  $("status").textContent = `Camera ${video.videoWidth}x${video.videoHeight} · fill the dashed square with the item`;
+  setBusy(false);
+}
+start().catch(e => { $("status").textContent = "Error: " + e.message + " (open http://localhost:8000 and allow the camera)"; });
+</script>
+</body>
+</html>

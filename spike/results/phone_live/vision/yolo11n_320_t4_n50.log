@@ -1,0 +1,61 @@
+I 00:00:00.001802 executorch:executor_runner.cpp:341] Resetting threadpool with num threads = 4
+I 00:00:00.001876 executorch:cpuinfo_utils.cpp:71] Reading file /sys/devices/soc0/image_version
+I 00:00:00.001901 executorch:cpuinfo_utils.cpp:87] Failed to open midr file /sys/devices/soc0/image_version
+I 00:00:00.001908 executorch:cpuinfo_utils.cpp:167] Number of efficient cores 4
+I 00:00:00.002217 executorch:threadpool.cpp:66] Resetting threadpool to 4 threads.
+I 00:00:00.002588 executorch:executor_runner.cpp:476] Model file /data/data/com.termux/files/home/bharatai/models/vision/yolo11n_320.pte is loaded.
+I 00:00:00.002598 executorch:executor_runner.cpp:486] Using method forward
+I 00:00:00.002604 executorch:executor_runner.cpp:560] Setting up CPU planned buffer 0, size 2576880.
+I 00:00:00.033343 executorch:executor_runner.cpp:629] Model loaded in 31.080364 ms.
+I 00:00:00.085107 executorch:executor_runner.cpp:785] Iteration 1 of 50: 51.166198 ms
+I 00:00:00.118644 executorch:executor_runner.cpp:785] Iteration 2 of 50: 32.559480 ms
+I 00:00:00.151009 executorch:executor_runner.cpp:785] Iteration 3 of 50: 31.558698 ms
+I 00:00:00.183432 executorch:executor_runner.cpp:785] Iteration 4 of 50: 31.665573 ms
+I 00:00:00.215772 executorch:executor_runner.cpp:785] Iteration 5 of 50: 31.592343 ms
+I 00:00:00.248088 executorch:executor_runner.cpp:785] Iteration 6 of 50: 31.551979 ms
+I 00:00:00.280432 executorch:executor_runner.cpp:785] Iteration 7 of 50: 31.590677 ms
+I 00:00:00.312831 executorch:executor_runner.cpp:785] Iteration 8 of 50: 31.640365 ms
+I 00:00:00.345351 executorch:executor_runner.cpp:785] Iteration 9 of 50: 31.730000 ms
+I 00:00:00.377524 executorch:executor_runner.cpp:785] Iteration 10 of 50: 31.397240 ms
+I 00:00:00.409626 executorch:executor_runner.cpp:785] Iteration 11 of 50: 31.347760 ms
+I 00:00:00.441979 executorch:executor_runner.cpp:785] Iteration 12 of 50: 31.616250 ms
+I 00:00:00.474324 executorch:executor_runner.cpp:785] Iteration 13 of 50: 31.600937 ms
+I 00:00:00.506915 executorch:executor_runner.cpp:785] Iteration 14 of 50: 31.641094 ms
+I 00:00:00.538517 executorch:executor_runner.cpp:785] Iteration 15 of 50: 30.899115 ms
+I 00:00:00.571119 executorch:executor_runner.cpp:785] Iteration 16 of 50: 31.710521 ms
+I 00:00:00.603739 executorch:executor_runner.cpp:785] Iteration 17 of 50: 31.863386 ms
+I 00:00:00.635984 executorch:executor_runner.cpp:785] Iteration 18 of 50: 31.488750 ms
+I 00:00:00.668337 executorch:executor_runner.cpp:785] Iteration 19 of 50: 31.595312 ms
+I 00:00:00.700502 executorch:executor_runner.cpp:785] Iteration 20 of 50: 31.412708 ms
+I 00:00:00.733479 executorch:executor_runner.cpp:785] Iteration 21 of 50: 32.221094 ms
+I 00:00:00.766388 executorch:executor_runner.cpp:785] Iteration 22 of 50: 32.106875 ms
+I 00:00:00.798857 executorch:executor_runner.cpp:785] Iteration 23 of 50: 31.597136 ms
+I 00:00:00.831235 executorch:executor_runner.cpp:785] Iteration 24 of 50: 31.611979 ms
+I 00:00:00.863877 executorch:executor_runner.cpp:785] Iteration 25 of 50: 31.904792 ms
+I 00:00:00.896083 executorch:executor_runner.cpp:785] Iteration 26 of 50: 31.455885 ms
+I 00:00:00.928336 executorch:executor_runner.cpp:785] Iteration 27 of 50: 31.500313 ms
+I 00:00:00.960630 executorch:executor_runner.cpp:785] Iteration 28 of 50: 31.499271 ms
+I 00:00:00.993674 executorch:executor_runner.cpp:785] Iteration 29 of 50: 32.245365 ms
+I 00:00:01.026278 executorch:executor_runner.cpp:785] Iteration 30 of 50: 31.815052 ms
+I 00:00:01.058496 executorch:executor_runner.cpp:785] Iteration 31 of 50: 31.285261 ms
+I 00:00:01.090725 executorch:executor_runner.cpp:785] Iteration 32 of 50: 31.408281 ms
+I 00:00:01.123691 executorch:executor_runner.cpp:785] Iteration 33 of 50: 32.148542 ms
+I 00:00:01.156397 executorch:executor_runner.cpp:785] Iteration 34 of 50: 31.899219 ms
+I 00:00:01.188026 executorch:executor_runner.cpp:785] Iteration 35 of 50: 30.896510 ms
+I 00:00:01.219938 executorch:executor_runner.cpp:785] Iteration 36 of 50: 31.185625 ms
+I 00:00:01.252778 executorch:executor_runner.cpp:785] Iteration 37 of 50: 32.146615 ms
+I 00:00:01.285591 executorch:executor_runner.cpp:785] Iteration 38 of 50: 32.027083 ms
+I 00:00:01.317909 executorch:executor_runner.cpp:785] Iteration 39 of 50: 31.544844 ms
+I 00:00:01.350265 executorch:executor_runner.cpp:785] Iteration 40 of 50: 31.615365 ms
+I 00:00:01.382925 executorch:executor_runner.cpp:785] Iteration 41 of 50: 31.830417 ms
+I 00:00:01.415256 executorch:executor_runner.cpp:785] Iteration 42 of 50: 31.627344 ms
+I 00:00:01.447451 executorch:executor_runner.cpp:785] Iteration 43 of 50: 31.452084 ms
+I 00:00:01.479735 executorch:executor_runner.cpp:785] Iteration 44 of 50: 31.541198 ms
+I 00:00:01.512052 executorch:executor_runner.cpp:785] Iteration 45 of 50: 31.537083 ms
+I 00:00:01.545049 executorch:executor_runner.cpp:785] Iteration 46 of 50: 32.223073 ms
+I 00:00:01.577156 executorch:executor_runner.cpp:785] Iteration 47 of 50: 31.315469 ms
+I 00:00:01.608857 executorch:executor_runner.cpp:785] Iteration 48 of 50: 30.980937 ms
+I 00:00:01.641547 executorch:executor_runner.cpp:785] Iteration 49 of 50: 31.935313 ms
+I 00:00:01.674535 executorch:executor_runner.cpp:785] Iteration 50 of 50: 32.225156 ms
+I 00:00:01.674653 executorch:executor_runner.cpp:794] Model executed successfully 50 time(s) in 1602.411567 ms.
+I 00:00:01.674659 executorch:executor_runner.cpp:798] 1 outputs: 

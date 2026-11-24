@@ -1,0 +1,47 @@
+{
+  "cable": {
+    "archive": "cable.tar.xz",
+    "bytes": 504731120,
+    "sha256": "1e3d59b80a6a8da5adf32fb0cf311c7b964cde146d6920aef9ca66380999a9cd"
+  },
+  "carpet": {
+    "archive": "carpet.tar.xz",
+    "bytes": 740285760,
+    "sha256": "d9dd5064515a20bd75cf24d223c570579141abd72388beef892780b74dbaa85d"
+  },
+  "grid": {
+    "archive": "grid.tar.xz",
+    "bytes": 160763852,
+    "sha256": "d94a9a651cbfaee22c94d06cf8fa8204a590c872362de0489eb34f1645328de8"
+  },
+  "leather": {
+    "archive": "leather.tar.xz",
+    "bytes": 524889948,
+    "sha256": "704ffa48b1dc2fc44824aa50442d9febc399dd92a5d6fd8156f8aa0373d15f24"
+  },
+  "metal_nut": {
+    "archive": "metal_nut.tar.xz",
+    "bytes": 165414484,
+    "sha256": "86e3c8e163ceb19146ad3ddc408e85cc34ae02e0da430e07a73bac6bbb48532a"
+  },
+  "screw": {
+    "archive": "screw.tar.xz",
+    "bytes": 195344332,
+    "sha256": "0a27a365a21e472d19b9fb48cb8e4002b49fabe083bff7f4c16fa57d78154f10"
+  },
+  "tile": {
+    "archive": "tile.tar.xz",
+    "bytes": 351279732,
+    "sha256": "392228153b96d0db9f179d3f7c2d63e131e907154883b57309fcbf798643173c"
+  },
+  "transistor": {
+    "archive": "transistor.tar.xz",
+    "bytes": 402874300,
+    "sha256": "146b2166c35a1d0cf37ded091366ac01a50338b4ac704632f1239890eaca4449"
+  },
+  "wood": {
+    "archive": "wood.tar.xz",
+    "bytes": 498057680,
+    "sha256": "3757297ac2a266072eb4f25a97f805f5b37fd583492b20bd709f310736c1ea47"
+  }
+}

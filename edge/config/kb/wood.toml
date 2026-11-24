@@ -1,0 +1,58 @@
+# Knowledge base: wood board (demo product + MVTec wood replay). Week 5 DRAFT for user review.
+# The advisor (Llama 3.2 1B) may ONLY recommend actions listed here, cited by id; anything else is rejected
+# and the templated fallback (first actions of each defect type) is used instead.
+
+[scratch]
+causes = ["sliding contact with tools, fixtures or other boards during handling",
+          "grit or debris on the conveyor, table or stacking surface",
+          "sanding or planing marks not removed in finishing"]
+actions = [
+  { id = "W-S1", text = "Lightly sand the scratch along the grain and re-finish the area, then re-inspect." },
+  { id = "W-S2", text = "Clean the handling surfaces and conveyor of grit and debris." },
+  { id = "W-S3", text = "Check fixtures and stacking for sharp edges; add protective pads between boards." },
+]
+
+[color]
+causes = ["ink, marker or pencil marks from marking or handling",
+          "contact with dirty gloves or tools",
+          "surface contamination from adhesive or finish overspray"]
+actions = [
+  { id = "W-C1", text = "Remove the mark with a suitable cleaner or light sanding, then re-inspect." },
+  { id = "W-C2", text = "Replace or clean gloves and tools that touch finished surfaces." },
+  { id = "W-C3", text = "Review where boards are marked; keep markings off visible faces." },
+]
+
+[liquid]
+causes = ["water or oil spill soaked into the surface",
+          "moisture exposure in storage (leak, condensation)",
+          "coolant or lubricant drips from nearby machines"]
+actions = [
+  { id = "W-L1", text = "Set the board aside to dry and check moisture content before rework." },
+  { id = "W-L2", text = "Inspect the storage area and nearby machines for leaks or drips." },
+  { id = "W-L3", text = "If the stain does not sand out, downgrade or scrap the board per QC rules." },
+]
+
+[hole]
+causes = ["knot fall-out or insect damage in the raw timber",
+          "drill or fastener mis-hit during machining",
+          "impact damage during transport"]
+actions = [
+  { id = "W-H1", text = "Quarantine the board for QC review; do not ship." },
+  { id = "W-H2", text = "Check drilling and fastening setup and tool positions for mis-hits." },
+  { id = "W-H3", text = "Inspect the incoming timber batch for knot holes or insect damage." },
+]
+
+[combined]
+causes = ["several defects together; usually rough handling or a poor-quality raw board"]
+actions = [
+  { id = "W-X1", text = "Quarantine the board for QC review; do not ship." },
+  { id = "W-X2", text = "Review handling along the line for the steps that caused the damage." },
+]
+
+[unknown_anomaly]
+causes = ["an unusual appearance the detector cannot name: possible new defect type, debris on the board, or a lighting/placement change"]
+actions = [
+  { id = "W-U1", text = "Look at the marked area: remove loose debris and inspect again." },
+  { id = "W-U2", text = "If the area is a real defect, set the board aside for QC review." },
+  { id = "W-U3", text = "If many good boards are flagged, re-check the lamp and camera position and re-calibrate." },
+]

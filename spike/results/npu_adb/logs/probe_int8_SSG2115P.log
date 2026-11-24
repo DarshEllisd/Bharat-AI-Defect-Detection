@@ -1,0 +1,23 @@
+I 00:00:00.000663 executorch:qnn_executor_runner.cpp:335] Model file /data/local/tmp/bharatai_npu/models/probe_int8_SSG2115P.pte is loaded.
+I 00:00:00.000708 executorch:qnn_executor_runner.cpp:345] Using method forward
+I 00:00:00.000714 executorch:qnn_executor_runner.cpp:392] Setting up planned buffer 0, size 602160.
+[INFO] [Qnn ExecuTorch]: Deserializing processed data using QnnContextCustomProtocol
+[INFO] [Qnn ExecuTorch]: Creating new backend bundle.
+[INFO] [Qnn ExecuTorch]: create QNN Logger with log_level 1
+[INFO] [Qnn ExecuTorch]: Initialize Qnn backend parameters for Qnn executorch backend type 2
+[INFO] [Qnn ExecuTorch]: Caching: Caching is in RESTORE MODE.
+[INFO] [Qnn ExecuTorch]: QnnContextCustomProtocol expected magic number: 0x5678abcd but get: 0x2000000
+[INFO] [Qnn ExecuTorch]: Running level=1 optimization.
+I 00:00:00.163995 executorch:qnn_executor_runner.cpp:416] Method loaded.
+E 00:00:00.164365 executorch:method.cpp:1381] Output 0 is memory planned, or is a constant. Cannot override the existing data pointer.
+I 00:00:00.164382 executorch:qnn_executor_runner.cpp:476] ignoring error from set_output_data_ptr(): 0x2
+I 00:00:00.164387 executorch:qnn_executor_runner.cpp:479] Inputs prepared.
+I 00:00:00.164485 executorch:qnn_executor_runner.cpp:485] Number of inputs: 1
+I 00:00:00.165017 executorch:qnn_executor_runner.cpp:598] Perform 3 inference for warming up
+I 00:00:00.166742 executorch:qnn_executor_runner.cpp:604] Start inference (0)
+I 00:00:00.173047 executorch:qnn_executor_runner.cpp:622] 20 inference took 6.277000 ms, avg 0.313850 ms
+I 00:00:00.173309 executorch:qnn_executor_runner.cpp:666] Total 1 inference took 6.277000 ms, avg 6.277000 ms
+I 00:00:00.173401 executorch:qnn_executor_runner.cpp:731] Write etdump to etdump.etdp, Size = 3856
+[INFO] [Qnn ExecuTorch]: Destroy Qnn context
+[INFO] [Qnn ExecuTorch]: Destroy Qnn device
+[INFO] [Qnn ExecuTorch]: Destroy Qnn backend

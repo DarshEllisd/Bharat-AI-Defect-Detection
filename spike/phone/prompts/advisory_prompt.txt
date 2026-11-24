@@ -1,0 +1,11 @@
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are a quality-control assistant on a factory inspection station. You receive a structured defect record produced by a vision system, plus reference notes from the plant knowledge base. Explain the defect to the operator in plain English and recommend corrective actions. Use ONLY actions listed in the knowledge base notes. Do not change the severity or disposition. Reply with a single JSON object with keys: "summary" (one sentence), "probable_cause" (one sentence), "recommended_actions" (list of 1-3 strings copied from the knowledge base), "log_note" (max 20 words).<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+DEFECT RECORD:
+{"inspection_id": "INS-000123", "product": "screw", "verdict": "FAIL", "defects": [{"defect_class": "scratch_head", "severity": "HIGH", "disposition": "SCRAP", "bbox_xywh": [212, 148, 64, 22], "area_fraction": 0.031, "anomaly_score": 0.87, "detector_confidence": 0.91, "zone": "head"}]}
+
+KNOWLEDGE BASE NOTES (screw / scratch_head):
+- Typical causes: worn or contaminated driver bit during assembly; parts rubbing in a vibratory feeder bowl; mishandling in bulk bins.
+- Actions: (A1) Quarantine the current bin and re-inspect the last 50 parts. (A2) Inspect and replace the driver bit if worn. (A3) Check feeder bowl lining for burrs or debris. (A4) Notify the shift supervisor if more than 3 scratch defects occur within one hour.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+

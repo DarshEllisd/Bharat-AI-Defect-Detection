@@ -1,0 +1,75 @@
+== NPU probe Sun Nov  1 21:08:37 IST 2026 as shell context=u:r:shell:s0
+
+== 1. Device facts
+ro.soc.manufacturer=QTI
+ro.soc.model=SM7550
+ro.board.platform=crow
+ro.hardware=qcom
+soc0/machine=CROW
+soc0/soc_id=608
+soc0/family=Snapdragon
+soc0/revision=1.0
+FastRPC device nodes:
+ls: /dev/fastrpc*: No such file or directory
+crw-rw-r-- 1 system system 475,   0 1970-01-16 08:10 /dev/adsprpc-smd
+crw-r--r-- 1 system system 475,   1 1970-01-16 08:10 /dev/adsprpc-smd-secure
+libcdsprpc (CPU-side DSP RPC library):
+-rw-r--r-- 1 root root 446632 2024-09-19 16:30 /vendor/lib64/libcdsprpc.so
+libcdsprpc exposed to apps (public.libraries):
+libcdsprpc.so
+Vendor-shipped HTP/QNN/SNPE libraries (their names reveal the Hexagon version, e.g. V73):
+  /odm/lib64/libQnnCpu.so
+  /odm/lib64/libQnnGpu.so
+  /odm/lib64/libQnnHtp.so
+  /odm/lib64/libQnnHtpPrepare.so
+  /odm/lib64/libQnnHtpV68Stub.so
+  /odm/lib64/libQnnHtpV69Stub.so
+  /odm/lib64/libQnnHtpV73CalculatorStub.so
+  /odm/lib64/libQnnHtpV73Stub.so
+  /odm/lib64/libQnnSaver.so
+  /odm/lib64/libQnnSystem.so
+  /odm/lib64/libSNPE.so
+  /odm/lib64/libSNPE_G.so
+  /odm/lib64/libSnpeHta.so
+  /odm/lib64/libSnpeHtpPrepare.so
+  /odm/lib64/libSnpeHtpV68Stub.so
+  /odm/lib64/libSnpeHtpV69Stub.so
+  /odm/lib64/libSnpeHtpV73Stub.so
+  /odm/lib64/libaiboost_qnn_external_delegate_te.so
+  /odm/lib64/libarcsoft_qnnhtp.so
+  /odm/lib64/libcalculator_htp.so
+  /odm/lib64/libhta_hexagon_runtime.so
+  /odm/lib64/libhta_hexagon_runtime_snpe.so
+  /odm/lib64/libsnpe_dsp_domains_v2.so
+  /odm/lib64/libsnpe_loader.so
+  /odm/lib64/libsnpeml.so
+
+== 2. qnn-platform-validator (one run per Hexagon generation's skeleton libraries)
+validator skel=v66 rc=0 :: PF_VALIDATOR: DEBUG: Calling PlatformValidator->getLibVersion PF_VALIDATOR: ERROR: The fastRPC library version is not implemented yet. Library version of the backend DSP: Not Found. PF_VALIDATOR: DEBUG: Calling PlatformValidator->getCoreVersion Core Version of the backend DSP: Hexagon Architecture V73 Unit Test on the backend DSP: Passed. 
+validator skel=v68 rc=0 :: PF_VALIDATOR: DEBUG: Calling PlatformValidator->getLibVersion PF_VALIDATOR: ERROR: The fastRPC library version is not implemented yet. Library version of the backend DSP: Not Found. PF_VALIDATOR: DEBUG: Calling PlatformValidator->getCoreVersion Core Version of the backend DSP: Hexagon Architecture V73 Unit Test on the backend DSP: Passed. 
+validator skel=v69 rc=0 :: PF_VALIDATOR: DEBUG: Calling PlatformValidator->getLibVersion PF_VALIDATOR: ERROR: The fastRPC library version is not implemented yet. Library version of the backend DSP: Not Found. PF_VALIDATOR: DEBUG: Calling PlatformValidator->getCoreVersion Core Version of the backend DSP: Hexagon Architecture V73 Unit Test on the backend DSP: Passed. 
+validator skel=v73 rc=0 :: PF_VALIDATOR: DEBUG: Calling PlatformValidator->getLibVersion PF_VALIDATOR: ERROR: The fastRPC library version is not implemented yet. Library version of the backend DSP: Not Found. PF_VALIDATOR: DEBUG: Calling PlatformValidator->getCoreVersion Core Version of the backend DSP: Hexagon Architecture V73 Unit Test on the backend DSP: Passed. 
+validator skel=v75 rc=0 :: PF_VALIDATOR: DEBUG: Calling PlatformValidator->getLibVersion PF_VALIDATOR: ERROR: The fastRPC library version is not implemented yet. Library version of the backend DSP: Not Found. PF_VALIDATOR: DEBUG: Calling PlatformValidator->getCoreVersion Core Version of the backend DSP: Hexagon Architecture V73 Unit Test on the backend DSP: Passed. 
+validator skel=v79 rc=0 :: PF_VALIDATOR: DEBUG: Calling PlatformValidator->getLibVersion PF_VALIDATOR: ERROR: The fastRPC library version is not implemented yet. Library version of the backend DSP: Not Found. PF_VALIDATOR: DEBUG: Calling PlatformValidator->getCoreVersion Core Version of the backend DSP: Hexagon Architecture V73 Unit Test on the backend DSP: Passed. 
+
+== 3. ExecuTorch QNN-delegated models
+probe_fp16_SM8350 (as SM8350, htp v68): rc=134   :: [ERROR] [Qnn ExecuTorch]: QnnDsp <E> Request feature vtcm size with value 4194304 unsupported [ERROR] [Qnn ExecuTorch]: QnnDsp <E> Failed to register context to device and backend 
+probe_int8_SM8350 (as SM8350, htp v68): rc=134   :: [ERROR] [Qnn ExecuTorch]: QnnDsp <E> Request feature vtcm size with value 4194304 unsupported [ERROR] [Qnn ExecuTorch]: QnnDsp <E> Failed to register context to device and backend 
+probe_fp16_SM8450 (as SM8450, htp v69): rc=134   :: [ERROR] [Qnn ExecuTorch]: QnnDsp <E> Request feature vtcm size with value 8388608 unsupported [ERROR] [Qnn ExecuTorch]: QnnDsp <E> Failed to register context to device and backend 
+probe_int8_SM8450 (as SM8450, htp v69): rc=134   :: [ERROR] [Qnn ExecuTorch]: QnnDsp <E> Request feature vtcm size with value 8388608 unsupported [ERROR] [Qnn ExecuTorch]: QnnDsp <E> Failed to register context to device and backend 
+yolo320_fp16_SM8450 (as SM8450, htp v69): rc=134   :: [ERROR] [Qnn ExecuTorch]: QnnDsp <E> Request feature vtcm size with value 8388608 unsupported [ERROR] [Qnn ExecuTorch]: QnnDsp <E> Failed to register context to device and backend 
+probe_fp16_SM8550 (as SM8550, htp v73): rc=134   :: [ERROR] [Qnn ExecuTorch]: QnnDsp <E> Request feature vtcm size with value 8388608 unsupported [ERROR] [Qnn ExecuTorch]: QnnDsp <E> Failed to register context to device and backend 
+probe_int8_SM8550 (as SM8550, htp v73): rc=134   :: [ERROR] [Qnn ExecuTorch]: QnnDsp <E> Request feature vtcm size with value 8388608 unsupported [ERROR] [Qnn ExecuTorch]: QnnDsp <E> Failed to register context to device and backend 
+yolo320_fp16_SM8550 (as SM8550, htp v73): rc=134   :: [ERROR] [Qnn ExecuTorch]: QnnDsp <E> Request feature vtcm size with value 8388608 unsupported [ERROR] [Qnn ExecuTorch]: QnnDsp <E> Failed to register context to device and backend 
+probe_int8_SSG2115P (as SSG2115P, htp v73): rc=0 avg 6.277000 ms  :: I 00:00:00.164382 executorch:qnn_executor_runner.cpp:476] ignoring error from set_output_data_ptr(): 0x2 
+probe_fp16_SM8650 (as SM8650, htp v75): rc=134   :: [ERROR] [Qnn ExecuTorch]: QnnDsp <E> Request feature arch with value 75 unsupported [ERROR] [Qnn ExecuTorch]: QnnDsp <E> Failed to register context to device and backend 
+probe_int8_SM8650 (as SM8650, htp v75): rc=134   :: [ERROR] [Qnn ExecuTorch]: QnnDsp <E> Request feature arch with value 75 unsupported [ERROR] [Qnn ExecuTorch]: QnnDsp <E> Failed to register context to device and backend 
+yolo320_fp16_SM8650 (as SM8650, htp v75): rc=134   :: [ERROR] [Qnn ExecuTorch]: QnnDsp <E> Request feature arch with value 75 unsupported [ERROR] [Qnn ExecuTorch]: QnnDsp <E> Failed to register context to device and backend 
+probe_fp16_SM8750 (as SM8750, htp v79): rc=134   :: [ERROR] [Qnn ExecuTorch]: QnnDsp <E> Request feature arch with value 79 unsupported [ERROR] [Qnn ExecuTorch]: QnnDsp <E> Failed to register context to device and backend 
+probe_int8_SM8750 (as SM8750, htp v79): rc=134   :: [ERROR] [Qnn ExecuTorch]: QnnDsp <E> Request feature arch with value 79 unsupported [ERROR] [Qnn ExecuTorch]: QnnDsp <E> Failed to register context to device and backend 
+yolo320_fp16_SM8750 (as SM8750, htp v79): rc=134   :: [ERROR] [Qnn ExecuTorch]: QnnDsp <E> Request feature arch with value 79 unsupported [ERROR] [Qnn ExecuTorch]: QnnDsp <E> Failed to register context to device and backend 
+probe_fp16_SM8845 (as SM8845, htp v81): rc=134   :: [ERROR] [Qnn ExecuTorch]: QnnDsp <E> Request feature arch with value 81 unsupported [ERROR] [Qnn ExecuTorch]: QnnDsp <E> Failed to register context to device and backend 
+probe_int8_SM8845 (as SM8845, htp v81): rc=134   :: [ERROR] [Qnn ExecuTorch]: QnnDsp <E> Request feature arch with value 81 unsupported [ERROR] [Qnn ExecuTorch]: QnnDsp <E> Failed to register context to device and backend 
+yolo320_fp16_SM8845 (as SM8845, htp v81): rc=134   :: [ERROR] [Qnn ExecuTorch]: QnnDsp <E> Request feature arch with value 81 unsupported [ERROR] [Qnn ExecuTorch]: QnnDsp <E> Failed to register context to device and backend 
+
+Report: /data/local/tmp/bharatai_npu/results/npu_probe.txt

@@ -1,0 +1,69 @@
+{
+  "device_time": "2026-11-22 21:25:33",
+  "rss_mb_start": 4.6,
+  "load_ms": {
+    "own_wood": 235.3,
+    "own_fabric_t2": 18.2,
+    "yolo": 28.0
+  },
+  "rss_mb_loaded": 28.6,
+  "parity": {
+    "own_wood_good": {
+      "max_abs_vs_qnn_executor_runner": 0.0,
+      "max_abs_vs_laptop_sim": 0.032891057431697845,
+      "score_server": 0.10902100056409836,
+      "score_runner": 0.10902100056409836
+    },
+    "own_wood_defect": {
+      "max_abs_vs_qnn_executor_runner": 0.0,
+      "max_abs_vs_laptop_sim": 0.08462981879711151,
+      "score_server": 0.2586939036846161,
+      "score_runner": 0.2586939036846161
+    },
+    "own_fabric_t2_good": {
+      "max_abs_vs_qnn_executor_runner": 0.0,
+      "max_abs_vs_laptop_sim": 0.041887760162353516,
+      "score_server": 0.25970426201820374,
+      "score_runner": 0.25970426201820374
+    },
+    "own_fabric_t2_defect": {
+      "max_abs_vs_qnn_executor_runner": 0.0,
+      "max_abs_vs_laptop_sim": 0.9215304851531982,
+      "score_server": 4.381462574005127,
+      "score_runner": 4.381462574005127
+    },
+    "yolo_own": {
+      "max_abs_vs_laptop_fp32": 0.00086212158203125,
+      "max_score_server": 0.550947904586792,
+      "max_score_laptop": 0.5509483814239502
+    }
+  },
+  "latency": {
+    "own_wood": {
+      "compute_p50_ms": 28.44,
+      "compute_p95_ms": 28.91,
+      "roundtrip_p50_ms": 34.3,
+      "roundtrip_p95_ms": 35.16,
+      "ipc_overhead_p50_ms": 5.86
+    },
+    "own_fabric_t2": {
+      "compute_p50_ms": 28.5,
+      "compute_p95_ms": 29.04,
+      "roundtrip_p50_ms": 34.48,
+      "roundtrip_p95_ms": 35.58,
+      "ipc_overhead_p50_ms": 5.98
+    },
+    "yolo": {
+      "compute_p50_ms": 21.97,
+      "compute_p95_ms": 22.44,
+      "roundtrip_p50_ms": 26.66,
+      "roundtrip_p95_ms": 27.38,
+      "ipc_overhead_p50_ms": 4.7
+    }
+  },
+  "soak_1000": {
+    "seconds": 32.7,
+    "rss_mb_before": 37.0,
+    "rss_mb_after": 36.9
+  }
+}

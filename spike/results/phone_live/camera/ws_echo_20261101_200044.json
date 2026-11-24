@@ -1,0 +1,20 @@
+{
+  "server": {
+    "decoder": "opencv",
+    "framework": "aiohttp"
+  },
+  "width": 320,
+  "height": 569,
+  "quality": 0.8,
+  "duration_s": 30,
+  "frames": 1455,
+  "fps": 48.5,
+  "encode_ms_avg": 13.7,
+  "encode_ms_p95": 22,
+  "rtt_ms_avg": 6.9,
+  "rtt_ms_p95": 10.2,
+  "server_decode_ms_avg": 2.1,
+  "frame_kb_avg": 30.6,
+  "camera": "720x1280",
+  "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Mobile Safari/537.36"
+}

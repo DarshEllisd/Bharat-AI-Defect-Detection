@@ -1,0 +1,88 @@
+# model=/data/data/com.termux/files/home/bharatai/models/llama/Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8.pte threads=4 max_new_tokens=128 date=2026-11-01T18:03:09+05:30
+I tokenizers:regex.cpp:40] Registering override fallback regex
+I 00:00:00.040388 executorch:main.cpp:159] Resetting threadpool with num threads = 4
+I 00:00:00.040510 executorch:cpuinfo_utils.cpp:71] Reading file /sys/devices/soc0/image_version
+I 00:00:00.041006 executorch:cpuinfo_utils.cpp:87] Failed to open midr file /sys/devices/soc0/image_version
+I 00:00:00.041019 executorch:cpuinfo_utils.cpp:167] Number of efficient cores 4
+I 00:00:00.041843 executorch:threadpool.cpp:66] Resetting threadpool to 4 threads.
+I 00:00:00.041874 executorch:runner.cpp:69] Creating LLaMa runner: model_path=/data/data/com.termux/files/home/bharatai/models/llama/Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8.pte, tokenizer_path=/data/data/com.termux/files/home/bharatai/models/llama/tokenizer.model
+E tokenizers:hf_tokenizer.cpp:167] Error parsing json file: [json.exception.parse_error.101] parse error at line 1, column 1: syntax error while parsing value - invalid literal; last read: 'I'
+I 00:00:00.255004 executorch:llm_runner_helper.cpp:72] Loaded TikToken tokenizer
+I 00:00:00.255072 executorch:llm_runner_helper.cpp:258] Reading metadata from model
+I 00:00:00.255293 executorch:llm_runner_helper.cpp:137] Metadata: use_sdpa_with_kv_cache = 1
+I 00:00:00.255303 executorch:llm_runner_helper.cpp:137] Metadata: use_kv_cache = 1
+I 00:00:00.255310 executorch:llm_runner_helper.cpp:137] Metadata: get_max_context_len = 2048
+I 00:00:00.255317 executorch:llm_runner_helper.cpp:137] Metadata: get_max_seq_len = 2048
+I 00:00:00.255322 executorch:llm_runner_helper.cpp:137] Metadata: enable_dynamic_shape = 1
+I 00:00:00.255333 executorch:llm_runner_helper.cpp:179] eos_id = 128009
+I 00:00:00.255336 executorch:llm_runner_helper.cpp:179] eos_id = 128001
+I 00:00:00.255352 executorch:llm_runner_helper.cpp:294] Using method: forward
+I 00:00:03.693879 executorch:text_llm_runner.cpp:86] Doing a warmup run...
+I 00:00:07.079803 executorch:text_prefiller.cpp:122] Prefill token result numel(): 128256
+I 00:00:07.080162 executorch:text_llm_runner.cpp:208] Max new tokens resolved: 128, given pos_ 354, num_prompt_tokens 354, max_context_len 2048
+I 00:00:15.037388 executorch:text_token_generator.h:181] 
+Reached to the end of generation
+I 00:00:15.037430 executorch:text_llm_runner.cpp:272] Warmup run finished!
+I 00:00:15.037439 executorch:text_llm_runner.cpp:92] RSS after loading model: 1376.250000 MiB (0 if unsupported)
+
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are a quality-control assistant on a factory inspection station. You receive a structured defect record produced by a vision system, plus reference notes from the plant knowledge base. Explain the defect to the operator in plain English and recommend corrective actions. Use ONLY actions listed in the knowledge base notes. Do not change the severity or disposition. Reply with a single JSON object with keys: "summary" (one sentence), "probable_cause" (one sentence), "recommended_actions" (list of 1-3 strings copied from the knowledge base), "log_note" (max 20 words).<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+DEFECT RECORD:
+{"inspection_id": "INS-000123", "product": "screw", "verdict": "FAIL", "defects": [{"defect_class": "scratch_head", "severity": "HIGH", "disposition": "SCRAP", "bbox_xywh": [212, 148, 64, 22], "area_fraction": 0.031, "anomaly_score": 0.87, "detector_confidence": 0.91, "zone": "head"}]}
+
+KNOWLEDGE BASE NOTES (screw / scratch_head):
+- Typical causes: worn or contaminated driver bit during assembly; parts rubbing in a vibratory feeder bowl; mishandling in bulk bins.
+- Actions: (A1) Quarantine the current bin and re-inspect the last 50 parts. (A2) Inspect and replace the driver bit if worn. (A3) Check feeder bowl lining for burrs or debris. (A4) Notify the shift supervisor if more than 3 scratch defects occur within one hour.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+I 00:00:18.169312 executorch:text_prefiller.cpp:122] Prefill token result numel(): 128256
+I 00:00:18.169691 executorch:text_llm_runner.cpp:208] Max new tokens resolved: 128, given pos_ 354, num_prompt_tokens 354, max_context_len 2048
+HereI 00:00:18.169707 executorch:text_llm_runner.cpp:231] RSS after prompt prefill: 1376.250000 MiB (0 if unsupported)
+ is the response:
+
+{
+  "summary": "Screw has a scratch head defect.",
+  "probable_cause": "Worn or contaminated driver bit during assembly.",
+  "recommended_actions": [
+    "A1: Quarantine the current bin and re-inspect the last 50 parts.",
+    "A2: Inspect and replace the driver bit if worn.",
+    "A3: Check feeder bowl lining for burrs or debris."
+  ],
+  "log_note": "Inspect screw for scratch head defect."<|eot_id|>I 00:00:26.117351 executorch:text_token_generator.h:181] 
+Reached to the end of generation
+I 00:00:26.117364 executorch:text_llm_runner.cpp:261] RSS after finishing text generation: 1376.250000 MiB (0 if unsupported)
+I 00:00:26.117403 executorch:stats.h:179] 	Prompt Tokens: 354    Generated Tokens: 107
+I 00:00:26.117408 executorch:stats.h:185] 	Model Load Time:		3.438000 (seconds)
+I 00:00:26.117413 executorch:stats.h:194] 	Total inference time:		11.080000 (seconds)		 Rate: 	9.657040 (tokens/second)
+I 00:00:26.117417 executorch:stats.h:203] 		Prompt evaluation:	3.132000 (seconds)		 Rate: 	113.026820 (tokens/second)
+I 00:00:26.117421 executorch:stats.h:215] 		Generated 107 tokens:	7.948000 (seconds)		 Rate: 	13.462506 (tokens/second)
+I 00:00:26.117425 executorch:stats.h:223] 	Time to first generated token:	3.132000 (seconds)
+I 00:00:26.117429 executorch:stats.h:230] 	Sampling time over 461 tokens:	0.043000 (seconds)
+
+
+PyTorchObserver {"prefill_token_per_sec":113.027,"decode_token_per_sec":13.4625,"prompt_tokens":354,"generated_tokens":107,"model_load_start_ms":1793536389992,"model_load_end_ms":1793536393430,"inference_start_ms":1793536404774,"inference_end_ms":1793536415854,"model_execution_start_ms":1793536415778,"model_execution_end_ms":1793536415853,"prompt_eval_end_ms":1793536407906,"first_token_ms":1793536407906,"aggregate_sampling_time_ms":43,"aggregate_model_execution_time_ms":11029,"SCALING_FACTOR_UNITS_PER_SECOND":1000}
+	Command being timed: "/data/data/com.termux/files/home/bharatai/bin/llama_main --model_path /data/data/com.termux/files/home/bharatai/models/llama/Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8.pte --tokenizer_path /data/data/com.termux/files/home/bharatai/models/llama/tokenizer.model --prompt_file /data/data/com.termux/files/home/bharatai/spike/prompts/advisory_prompt.txt --temperature 0 --max_new_tokens 128 --cpu_threads 4 --warmup"
+	User time (seconds): 87.39
+	System time (seconds): 1.81
+	Percent of CPU this job got: 337%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:26.41
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1409280
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 667
+	Minor (reclaiming a frame) page faults: 359092
+	Voluntary context switches: 1581
+	Involuntary context switches: 571
+	Swaps: 0
+	File system inputs: 778864
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+# exit_code=0

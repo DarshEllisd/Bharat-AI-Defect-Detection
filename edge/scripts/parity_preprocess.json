@@ -1,0 +1,24 @@
+{
+  "own_wood": {
+    "images": 71,
+    "tiles": 1,
+    "input_max_abs_diff_max": 0.0,
+    "input_max_abs_diff_median": 0.0,
+    "score_correlation": 1.0,
+    "score_max_rel_diff": 0.0,
+    "auroc_training_preproc": 1.0,
+    "auroc_edge_preproc": 1.0,
+    "pass": true
+  },
+  "own_fabric_t2": {
+    "images": 125,
+    "tiles": 2,
+    "input_max_abs_diff_max": 0.0,
+    "input_max_abs_diff_median": 0.0,
+    "score_correlation": 1.0,
+    "score_max_rel_diff": 0.0,
+    "auroc_training_preproc": 0.9176,
+    "auroc_edge_preproc": 0.9176,
+    "pass": true
+  }
+}

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>W1 Camera Link Test</title>
+<style>
+  body { font-family: system-ui, sans-serif; margin: 0; padding: 12px; background: #111; color: #eee; }
+  video { width: 100%; max-height: 40vh; background: #000; border-radius: 6px; }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; margin: 10px 0; align-items: center; }
+  select, button { font-size: 16px; padding: 8px 10px; border-radius: 6px; border: 0; }
+  button { background: #e8601c; color: #fff; }
+  button:disabled { opacity: .5; }
+  table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+  td { padding: 4px 6px; border-bottom: 1px solid #333; }
+  td:last-child { text-align: right; }
+  #status { color: #9ad; }
+</style>
+</head>
+<body>
+<h3>Camera → WebSocket → Termux test</h3>
+<video id="video" autoplay playsinline muted></video>
+<div class="row">
+  <label>Width <select id="width"><option>320</option><option selected>640</option><option>1280</option></select></label>
+  <label>JPEG q <select id="quality"><option>0.6</option><option selected>0.8</option><option>0.95</option></select></label>
+  <label>Seconds <select id="duration"><option>10</option><option selected>30</option><option>60</option></select></label>
+  <button id="start" disabled>Start</button>
+</div>
+<div id="status">Opening camera…</div>
+<table id="stats"></table>
+
+<script>
+const $ = id => document.getElementById(id);
+const video = $("video"), canvas = document.createElement("canvas"), ctx = canvas.getContext("2d");
+let ws, pending = null;
+
+function pct(arr, p) { const s = [...arr].sort((a, b) => a - b); return s[Math.min(s.length - 1, Math.floor(s.length * p))] || 0; }
+function avg(arr) { return arr.length ? arr.reduce((a, b) => a + b, 0) / arr.length : 0; }
+
+function connect() {
+  return new Promise((resolve, reject) => {
+    ws = new WebSocket(`ws://${location.host}/ws/frames`);
+    ws.binaryType = "arraybuffer";
+    ws.onopen = resolve;
+    ws.onerror = reject;
+    ws.onmessage = ev => { if (pending) { pending(JSON.parse(ev.data)); pending = null; } };
+  });
+}
+
+function captureJpeg(width, quality) {
+  canvas.width = width;
+  canvas.height = Math.round(width * video.videoHeight / video.videoWidth);
+  ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+  return new Promise(r => canvas.toBlob(r, "image/jpeg", quality));
+}
+
+function render(s) {
+  $("stats").innerHTML = Object.entries(s).map(([k, v]) => `<tr><td>${k}</td><td>${v}</td></tr>`).join("");
+}
+
+async function run() {
+  const width = +$("width").value, quality = +$("quality").value, duration = +$("duration").value;
+  $("start").disabled = true;
+  if (!ws || ws.readyState !== WebSocket.OPEN) await connect();
+  const enc = [], rtt = [], dec = [], kb = [];
+  const t0 = performance.now();
+  // One frame in flight at a time: measures the maximum sustainable loop rate
+  while (performance.now() - t0 < duration * 1000) {
+    const a = performance.now();
+    const blob = await captureJpeg(width, quality);
+    const b = performance.now();
+    const reply = await new Promise(res => { pending = res; blob.arrayBuffer().then(buf => ws.send(buf)); });
+    const c = performance.now();
+    enc.push(b - a); rtt.push(c - b); dec.push(reply.decode_ms); kb.push(reply.bytes / 1024);
+    if (enc.length % 10 === 0) {
+      const elapsed = (c - t0) / 1000;
+      $("status").textContent = `Running… ${elapsed.toFixed(0)}s / ${duration}s`;
+      render({ frames: enc.length, fps: (enc.length / elapsed).toFixed(1), "rtt avg ms": avg(rtt).toFixed(1) });
+    }
+  }
+  const elapsed = (performance.now() - t0) / 1000;
+  const summary = {
+    width, height: canvas.height, quality, duration_s: +elapsed.toFixed(1), frames: enc.length,
+    fps: +(enc.length / elapsed).toFixed(1),
+    encode_ms_avg: +avg(enc).toFixed(1), encode_ms_p95: +pct(enc, .95).toFixed(1),
+    rtt_ms_avg: +avg(rtt).toFixed(1), rtt_ms_p95: +pct(rtt, .95).toFixed(1),
+    server_decode_ms_avg: +avg(dec).toFixed(1), frame_kb_avg: +avg(kb).toFixed(1),
+    camera: `${video.videoWidth}x${video.videoHeight}`, user_agent: navigator.userAgent,
+  };
+  render(summary);
+  const r = await fetch("/results", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(summary) });
+  $("status").textContent = r.ok ? `Saved: ${(await r.json()).saved}` : "Could not save results";
+  $("start").disabled = false;
+}
+
+navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment", width: { ideal: 1280 }, height: { ideal: 720 } }, audio: false })
+  .then(stream => { video.srcObject = stream; return video.play(); })
+  .then(() => { $("status").textContent = "Camera ready. Pick settings and press Start."; $("start").disabled = false; })
+  .catch(e => { $("status").textContent = "Camera error: " + e.message + " (open via http://localhost, not an IP address)"; });
+
+$("start").onclick = () => run().catch(e => { $("status").textContent = "Error: " + e; $("start").disabled = false; });
+</script>
+</body>
+</html>

@@ -1,0 +1,1177 @@
+No mirror or mirror group selected. You might want to select one by running 'termux-change-repo'
+Testing the available mirrors:
+[*] (10) https://packages-cf.termux.dev/apt/termux-main: ok
+[*] (1) https://linux.domainesia.com/applications/termux/termux-main: ok
+[*] (1) https://termux.niranjan.co/termux-main: ok
+[*] (1) https://mirror.bardia.tech/termux/termux-main: bad
+[*] (1) https://mirrors.saswata.cc/termux/termux-main: bad
+[*] (1) https://mirrors.ravidwivedi.in/termux/termux-main: ok
+[*] (1) https://mirror.textcord.xyz/termux/termux-main: ok
+[*] (1) https://mirrors.krnk.org/apt/termux/termux-main: ok
+[*] (1) https://mirror.rinarin.dev/termux/termux-main: ok
+[*] (1) https://mirror.jeonnam.school/termux/termux-main: ok
+[*] (1) https://mirrors.nguyenhoang.cloud/termux/termux-main: ok
+[*] (1) https://mirrors.cbrx.io/apt/termux/termux-main: ok
+[*] (1) https://tmx.xvx.my.id/apt/termux-main: ok
+[*] (1) https://mirror.albony.in/termux/termux-main: ok
+[*] (1) https://mirror.twds.com.tw/termux/termux-main: ok
+[*] (1) https://mirror.nevacloud.com/applications/termux/termux-main: bad
+[*] (1) https://mirror.meowsmp.net/termux/termux-main: bad
+[*] (1) https://mirror.freedif.org/termux/termux-main: ok
+[*] (1) https://mirrors.in.sahilister.net/termux/termux-main/: ok
+[*] (1) https://mirror.iscas.ac.cn/termux/apt/termux-main: ok
+[*] (1) https://mirrors.sau.edu.cn/termux/apt/termux-main: ok
+[*] (1) https://mirrors.sdu.edu.cn/termux/termux-main: bad
+[*] (1) https://mirrors.aliyun.com/termux/termux-main: ok
+[*] (1) https://mirrors.cernet.edu.cn/termux/apt/termux-main: ok
+[*] (1) https://mirrors.cqupt.edu.cn/termux/termux-main: bad
+[*] (1) https://mirrors.sustech.edu.cn/termux/apt/termux-main: ok
+[*] (1) https://mirrors.bfsu.edu.cn/termux/apt/termux-main: bad
+[*] (1) https://mirrors.pku.edu.cn/termux/termux-main/: ok
+[*] (1) https://mirrors.hust.edu.cn/termux/apt/termux-main: ok
+[*] (1) https://mirrors.tuna.tsinghua.edu.cn/termux/apt/termux-main: ok
+[*] (1) https://mirror.sjtu.edu.cn/termux/termux-main/: ok
+[*] (1) https://mirror.nyist.edu.cn/termux/apt/termux-main: ok
+[*] (1) https://mirrors.ustc.edu.cn/termux/termux-main: ok
+[*] (1) https://mirrors.zju.edu.cn/termux/apt/termux-main: bad
+[*] (1) https://mirrors.nju.edu.cn/termux/apt/termux-main: ok
+[*] (4) https://grimler.se/termux/termux-main: ok
+[*] (1) https://mirror.polido.pt/termux/termux-main: bad
+[*] (1) https://termux.3san.dev/termux/termux-main: ok
+[*] (1) https://mirrors.medzik.dev/termux/termux-main: bad
+[*] (1) https://mirror.accum.se/mirror/termux.dev/termux-main: ok
+[*] (1) https://mirror.mwt.me/termux/main: ok
+[*] (1) https://ro.mirror.flokinet.net/termux/termux-main: ok
+[*] (1) https://md.mirrors.hacktegic.com/termux/termux-main: bad
+[*] (1) https://is.mirror.flokinet.net/termux/termux-main: ok
+[*] (1) https://mirror.termux.dev/termux-main: bad
+[*] (1) https://termux.mentality.rip/termux-main: bad
+[*] (1) https://nl.mirror.flokinet.net/termux/termux-main: ok
+[*] (1) https://termux.cdn.lumito.net/termux-main: bad
+[*] (1) https://mirror.leitecastro.com/termux/termux-main: ok
+[*] (1) https://mirror.bouwhuis.network/termux/termux-main: ok
+[*] (1) https://termux.librehat.com/apt/termux-main: ok
+[*] (1) https://mirror.autkin.net/termux/termux-main: ok
+[*] (1) https://mirror.sunred.org/termux/termux-main: ok
+[*] (1) https://packages.termux.dev/apt/termux-main: ok
+[*] (1) https://ftp.agdsn.de/termux/termux-main: ok
+[*] (1) https://ftp.fau.de/termux/termux-main: ok
+[*] (1) https://mirrors.cfe.re/termux/termux-main: bad
+[*] (1) https://mirrors.de.sahilister.net/termux/termux-main: ok
+[*] (1) https://gnlug.org/pub/termux/termux-main: ok
+[*] (1) https://mirror.mwt.me/termux/main: ok
+[*] (1) https://mirror.quantum5.ca/termux/termux-main: ok
+[*] (1) https://mirrors.utermux.dev/termux/termux-main: bad
+[*] (1) https://plug-mirror.rcac.purdue.edu/termux/termux-main: ok
+[*] (1) https://mirror.vern.cc/termux/termux-main: bad
+[*] (1) https://dl.kcubeterm.com/termux-main: bad
+[*] (1) https://termux.danyael.xyz/termux/termux-main: ok
+[*] (1) https://mirror.csclub.uwaterloo.ca/termux/termux-main: ok
+[*] (1) https://mirror.fcix.net/termux/termux-main: ok
+[*] (1) https://mirrors.middlendian.com/termux/termux-main: bad
+[*] (1) https://repository.su/termux/termux-main/: ok
+[*] (1) http://mirror.mephi.ru/termux/termux-main: ok
+Picking mirror: (53) /data/data/com.termux/files/usr/etc/termux/mirrors/europe/ftp.fau.de
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Get:1 https://ftp.fau.de/termux/termux-main stable InRelease [14.0 kB]
+Get:2 https://ftp.fau.de/termux/termux-main stable/main aarch64 Packages [591 kB]
+Fetched 605 kB in 4s (145 kB/s)
+Reading package lists...
+Building dependency tree...
+74 packages can be upgraded. Run 'apt list --upgradable' to see them.
+No mirror or mirror group selected. You might want to select one by running 'termux-change-repo'
+Checking availability of current mirror:
+[*] https://ftp.fau.de/termux/termux-main: ok
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Hit:1 https://ftp.fau.de/termux/termux-main stable InRelease
+Reading package lists...
+Building dependency tree...
+74 packages can be upgraded. Run 'apt list --upgradable' to see them.
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Calculating upgrade...
+The following NEW packages will be installed:
+  attr libacl libandroid-posix-semaphore libffi libmagic libngtcp2 libtasn1
+  p11-kit
+The following packages will be upgraded:
+  apt bash bzip2 ca-certificates command-not-found coreutils curl dash
+  debianutils dialog diffutils dos2unix dpkg ed findutils gawk gpgv grep gzip
+  inetutils less libandroid-glob libandroid-selinux libandroid-support
+  libassuan libbz2 libc++ libcap-ng libcurl libevent libgcrypt libgmp
+  libgnutls libgpg-error libiconv libidn2 liblz4 liblzma libmd libmpfr
+  libnettle libnghttp2 libnghttp3 libnpth libsmartcols libssh2 libtirpc
+  libunbound libunistring lsof nano ncurses net-tools openssl patch pcre2
+  procps psmisc readline sed tar termux-am termux-am-socket termux-core
+  termux-exec termux-keyring termux-licenses termux-tools unzip util-linux
+  xxhash xz-utils zlib zstd
+74 upgraded, 8 newly installed, 0 to remove and 0 not upgraded.
+Need to get 22.6 MB of archives.
+After this operation, 21.6 MB of additional disk space will be used.
+Do you want to continue? [Y/n] Get:1 https://ftp.fau.de/termux/termux-main stable/main aarch64 ca-certificates all 1:2026.10.20-1 [110 kB]
+Get:2 https://ftp.fau.de/termux/termux-main stable/main aarch64 zlib aarch64 1.3.2 [62.8 kB]
+Get:3 https://ftp.fau.de/termux/termux-main stable/main aarch64 openssl aarch64 1:3.6.5 [2483 kB]
+Get:4 https://ftp.fau.de/termux/termux-main stable/main aarch64 pcre2 aarch64 10.49 [1001 kB]
+Get:5 https://ftp.fau.de/termux/termux-main stable/main aarch64 libandroid-selinux aarch64 14.0.0.11-1 [59.6 kB]
+Get:6 https://ftp.fau.de/termux/termux-main stable/main aarch64 libiconv aarch64 1.19 [563 kB]
+Get:7 https://ftp.fau.de/termux/termux-main stable/main aarch64 libandroid-support aarch64 29-1 [10.9 kB]
+Get:8 https://ftp.fau.de/termux/termux-main stable/main aarch64 libc++ aarch64 30 [342 kB]
+Get:9 https://ftp.fau.de/termux/termux-main stable/main aarch64 libgmp aarch64 6.3.0-2 [328 kB]
+Get:10 https://ftp.fau.de/termux/termux-main stable/main aarch64 coreutils aarch64 9.12 [824 kB]
+Get:11 https://ftp.fau.de/termux/termux-main stable/main aarch64 libbz2 aarch64 1.0.8-8 [26.1 kB]
+Get:12 https://ftp.fau.de/termux/termux-main stable/main aarch64 bzip2 aarch64 1.0.8-8 [26.2 kB]
+Get:13 https://ftp.fau.de/termux/termux-main stable/main aarch64 diffutils aarch64 3.12-2 [163 kB]
+Get:14 https://ftp.fau.de/termux/termux-main stable/main aarch64 gzip aarch64 1.15 [75.6 kB]
+Get:15 https://ftp.fau.de/termux/termux-main stable/main aarch64 ncurses aarch64 6.6.20260307+really6.5.20250830 [558 kB]
+Get:16 https://ftp.fau.de/termux/termux-main stable/main aarch64 less aarch64 710 [144 kB]
+Get:17 https://ftp.fau.de/termux/termux-main stable/main aarch64 liblzma aarch64 5.8.4 [195 kB]
+Get:18 https://ftp.fau.de/termux/termux-main stable/main aarch64 xz-utils aarch64 5.8.4 [71.4 kB]
+Get:19 https://ftp.fau.de/termux/termux-main stable/main aarch64 libmd aarch64 1.3.0 [50.8 kB]
+Get:20 https://ftp.fau.de/termux/termux-main stable/main aarch64 attr aarch64 2.6.0 [56.2 kB]
+Get:21 https://ftp.fau.de/termux/termux-main stable/main aarch64 libacl aarch64 2.4.0 [124 kB]
+Get:22 https://ftp.fau.de/termux/termux-main stable/main aarch64 libandroid-glob aarch64 0.6-3 [7032 B]
+Get:23 https://ftp.fau.de/termux/termux-main stable/main aarch64 tar aarch64 1.35-3 [346 kB]
+Get:24 https://ftp.fau.de/termux/termux-main stable/main aarch64 zstd aarch64 1.5.7-1 [360 kB]
+Get:25 https://ftp.fau.de/termux/termux-main stable/main aarch64 dpkg aarch64 1.22.6-5 [308 kB]
+Get:26 https://ftp.fau.de/termux/termux-main stable/main aarch64 findutils aarch64 4.11.0 [261 kB]
+Get:27 https://ftp.fau.de/termux/termux-main stable/main aarch64 libgpg-error aarch64 1.61 [121 kB]
+Get:28 https://ftp.fau.de/termux/termux-main stable/main aarch64 libassuan aarch64 3.0.2-1 [73.9 kB]
+Get:29 https://ftp.fau.de/termux/termux-main stable/main aarch64 libgcrypt aarch64 1.12.4 [513 kB]
+Get:30 https://ftp.fau.de/termux/termux-main stable/main aarch64 libnpth aarch64 1.8 [11.3 kB]
+Get:31 https://ftp.fau.de/termux/termux-main stable/main aarch64 gpgv aarch64 2.5.24 [197 kB]
+Get:32 https://ftp.fau.de/termux/termux-main stable/main aarch64 grep aarch64 3.12-3 [128 kB]
+Get:33 https://ftp.fau.de/termux/termux-main stable/main aarch64 libtasn1 aarch64 4.21.0 [101 kB]
+Get:34 https://ftp.fau.de/termux/termux-main stable/main aarch64 libffi aarch64 3.8.0 [37.6 kB]
+Get:35 https://ftp.fau.de/termux/termux-main stable/main aarch64 p11-kit aarch64 0.26.5 [468 kB]
+Get:36 https://ftp.fau.de/termux/termux-main stable/main aarch64 libnettle aarch64 4.0+really3.10.2 [406 kB]
+Get:37 https://ftp.fau.de/termux/termux-main stable/main aarch64 libunistring aarch64 1.5 [574 kB]
+Get:38 https://ftp.fau.de/termux/termux-main stable/main aarch64 libidn2 aarch64 2.3.8-1 [105 kB]
+Get:39 https://ftp.fau.de/termux/termux-main stable/main aarch64 libngtcp2 aarch64 1.25.0 [174 kB]
+Get:40 https://ftp.fau.de/termux/termux-main stable/main aarch64 libevent aarch64 2.1.13 [203 kB]
+Get:41 https://ftp.fau.de/termux/termux-main stable/main aarch64 libnghttp2 aarch64 1.70.0 [95.9 kB]
+Get:42 https://ftp.fau.de/termux/termux-main stable/main aarch64 libunbound aarch64 1.26.2 [388 kB]
+Get:43 https://ftp.fau.de/termux/termux-main stable/main aarch64 libgnutls aarch64 3.8.13-1 [777 kB]
+Get:44 https://ftp.fau.de/termux/termux-main stable/main aarch64 liblz4 aarch64 1.10.0-1 [84.7 kB]
+Get:45 https://ftp.fau.de/termux/termux-main stable/main aarch64 sed aarch64 4.10 [123 kB]
+Get:46 https://ftp.fau.de/termux/termux-main stable/main aarch64 libnghttp3 aarch64 1.18.0 [69.7 kB]
+Get:47 https://ftp.fau.de/termux/termux-main stable/main aarch64 libssh2 aarch64 1.11.1-2 [219 kB]
+Get:48 https://ftp.fau.de/termux/termux-main stable/main aarch64 libcurl aarch64 8.23.0 [1043 kB]
+Get:49 https://ftp.fau.de/termux/termux-main stable/main aarch64 curl aarch64 8.23.0 [246 kB]
+Get:50 https://ftp.fau.de/termux/termux-main stable/main aarch64 dash aarch64 0.5.13.5 [70.6 kB]
+Get:51 https://ftp.fau.de/termux/termux-main stable/main aarch64 libmpfr aarch64 4.2.2 [274 kB]
+Get:52 https://ftp.fau.de/termux/termux-main stable/main aarch64 readline aarch64 8.3.6 [294 kB]
+Get:53 https://ftp.fau.de/termux/termux-main stable/main aarch64 gawk aarch64 5.4.1 [928 kB]
+Get:54 https://ftp.fau.de/termux/termux-main stable/main aarch64 procps aarch64 4.0.7-2 [226 kB]
+Get:55 https://ftp.fau.de/termux/termux-main stable/main aarch64 psmisc aarch64 23.7-1 [41.2 kB]
+Get:56 https://ftp.fau.de/termux/termux-main stable/main aarch64 termux-am all 0.8.1 [576 kB]
+Get:57 https://ftp.fau.de/termux/termux-main stable/main aarch64 termux-am-socket aarch64 1.5.0-1 [16.1 kB]
+Get:58 https://ftp.fau.de/termux/termux-main stable/main aarch64 termux-core aarch64 0.4.0-1 [198 kB]
+Get:59 https://ftp.fau.de/termux/termux-main stable/main aarch64 termux-exec aarch64 1:2.5.0-1 [287 kB]
+Get:60 https://ftp.fau.de/termux/termux-main stable/main aarch64 libandroid-posix-semaphore aarch64 0.1-4 [4076 B]
+Get:61 https://ftp.fau.de/termux/termux-main stable/main aarch64 libsmartcols aarch64 2.42.4 [104 kB]
+Get:62 https://ftp.fau.de/termux/termux-main stable/main aarch64 libcap-ng aarch64 2:0.9.6 [57.5 kB]
+Get:63 https://ftp.fau.de/termux/termux-main stable/main aarch64 util-linux aarch64 2.42.4 [780 kB]
+Get:64 https://ftp.fau.de/termux/termux-main stable/main aarch64 dialog aarch64 1.3-20260721-0 [101 kB]
+Get:65 https://ftp.fau.de/termux/termux-main stable/main aarch64 termux-tools aarch64 1.46.0+really1.45.0-1 [33.6 kB]
+Get:66 https://ftp.fau.de/termux/termux-main stable/main aarch64 termux-keyring all 3.14 [45.0 kB]
+Get:67 https://ftp.fau.de/termux/termux-main stable/main aarch64 termux-licenses all 2.2 [52.3 kB]
+Get:68 https://ftp.fau.de/termux/termux-main stable/main aarch64 xxhash aarch64 0.8.4 [80.2 kB]
+Get:69 https://ftp.fau.de/termux/termux-main stable/main aarch64 apt aarch64 2.8.1-2 [1031 kB]
+Get:70 https://ftp.fau.de/termux/termux-main stable/main aarch64 bash aarch64 5.3.20 [957 kB]
+Get:71 https://ftp.fau.de/termux/termux-main stable/main aarch64 command-not-found aarch64 3.5.0-18 [118 kB]
+Get:72 https://ftp.fau.de/termux/termux-main stable/main aarch64 debianutils aarch64 5.24 [17.2 kB]
+Get:73 https://ftp.fau.de/termux/termux-main stable/main aarch64 dos2unix aarch64 7.5.7 [65.9 kB]
+Get:74 https://ftp.fau.de/termux/termux-main stable/main aarch64 ed aarch64 1.22.6 [43.0 kB]
+Get:75 https://ftp.fau.de/termux/termux-main stable/main aarch64 inetutils aarch64 2.8-1 [240 kB]
+Get:76 https://ftp.fau.de/termux/termux-main stable/main aarch64 libmagic aarch64 5.48-3 [397 kB]
+Get:77 https://ftp.fau.de/termux/termux-main stable/main aarch64 libtirpc aarch64 1.3.8 [124 kB]
+Get:78 https://ftp.fau.de/termux/termux-main stable/main aarch64 lsof aarch64 4.99.7 [124 kB]
+Get:79 https://ftp.fau.de/termux/termux-main stable/main aarch64 nano aarch64 9.3 [242 kB]
+Get:80 https://ftp.fau.de/termux/termux-main stable/main aarch64 net-tools aarch64 2.10.0-1 [118 kB]
+Get:81 https://ftp.fau.de/termux/termux-main stable/main aarch64 patch aarch64 2.8.1 [74.1 kB]
+Get:82 https://ftp.fau.de/termux/termux-main stable/main aarch64 unzip aarch64 6.0-10 [117 kB]
+Fetched 22.6 MB in 7s (3121 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4470 files and directories currently installed.)
+Preparing to unpack .../ca-certificates_1%3a2026.10.20-1_all.deb ...
+Unpacking ca-certificates (1:2026.10.20-1) over (1:2025.02.25) ...
+Setting up ca-certificates (1:2026.10.20-1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4470 files and directories currently installed.)
+Preparing to unpack .../zlib_1.3.2_aarch64.deb ...
+Unpacking zlib (1.3.2) over (1.3.1) ...
+Setting up zlib (1.3.2) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4470 files and directories currently installed.)
+Preparing to unpack .../openssl_1%3a3.6.5_aarch64.deb ...
+Unpacking openssl (1:3.6.5) over (1:3.4.1) ...
+Setting up openssl (1:3.6.5) ...
+
+Configuration file '/data/data/com.termux/files/usr/etc/tls/openssl.cnf'
+ ==> File on system created by you or by a script.
+ ==> File also in package provided by package maintainer.
+   What would you like to do about it ?  Your options are:
+    Y or I  : install the package maintainer's version
+    N or O  : keep your currently-installed version
+      D     : show the differences between the versions
+      Z     : start a shell to examine the situation
+ The default action is to keep your current version.
+*** openssl.cnf (Y/I/N/O/D/Z) [default=N] ? Installing new version of config file /data/data/com.termux/files/usr/etc/tls/openssl.cnf ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4471 files and directories currently installed.)
+Preparing to unpack .../pcre2_10.49_aarch64.deb ...
+Unpacking pcre2 (10.49) over (10.45) ...
+Setting up pcre2 (10.49) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4476 files and directories currently installed.)
+Preparing to unpack .../libandroid-selinux_14.0.0.11-1_aarch64.deb ...
+Unpacking libandroid-selinux (14.0.0.11-1) over (14.0.0.11) ...
+Setting up libandroid-selinux (14.0.0.11-1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4476 files and directories currently installed.)
+Preparing to unpack .../libiconv_1.19_aarch64.deb ...
+Unpacking libiconv (1.19) over (1.18) ...
+Setting up libiconv (1.19) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4476 files and directories currently installed.)
+Preparing to unpack .../libandroid-support_29-1_aarch64.deb ...
+Unpacking libandroid-support (29-1) over (29) ...
+Setting up libandroid-support (29-1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4476 files and directories currently installed.)
+Preparing to unpack .../archives/libc++_30_aarch64.deb ...
+Unpacking libc++ (30) over (27c) ...
+Setting up libc++ (30) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4476 files and directories currently installed.)
+Preparing to unpack .../libgmp_6.3.0-2_aarch64.deb ...
+Unpacking libgmp (6.3.0-2) over (6.3.0-1) ...
+Setting up libgmp (6.3.0-2) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4476 files and directories currently installed.)
+Preparing to unpack .../coreutils_9.12_aarch64.deb ...
+Unpacking coreutils (9.12) over (9.6-1) ...
+Setting up coreutils (9.12) ...
+update-alternatives: using /data/data/com.termux/files/usr/libexec/coreutils/cat to provide /data/data/com.termux/files/usr/bin/pager (pager) in auto mode
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4477 files and directories currently installed.)
+Preparing to unpack .../libbz2_1.0.8-8_aarch64.deb ...
+Unpacking libbz2 (1.0.8-8) over (1.0.8-6) ...
+Setting up libbz2 (1.0.8-8) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4477 files and directories currently installed.)
+Preparing to unpack .../bzip2_1.0.8-8_aarch64.deb ...
+Unpacking bzip2 (1.0.8-8) over (1.0.8-6) ...
+Setting up bzip2 (1.0.8-8) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4477 files and directories currently installed.)
+Preparing to unpack .../diffutils_3.12-2_aarch64.deb ...
+Unpacking diffutils (3.12-2) over (3.11) ...
+Setting up diffutils (3.12-2) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4477 files and directories currently installed.)
+Preparing to unpack .../archives/gzip_1.15_aarch64.deb ...
+Unpacking gzip (1.15) over (1.13) ...
+Setting up gzip (1.15) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4477 files and directories currently installed.)
+Preparing to unpack .../ncurses_6.6.20260307+really6.5.20250830_aarch64.deb ...
+Unpacking ncurses (6.6.20260307+really6.5.20250830) over (6.5.20240831-2) ...
+Setting up ncurses (6.6.20260307+really6.5.20250830) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4481 files and directories currently installed.)
+Preparing to unpack .../archives/less_710_aarch64.deb ...
+Unpacking less (710) over (668) ...
+Setting up less (710) ...
+update-alternatives: using /data/data/com.termux/files/usr/bin/less to provide /data/data/com.termux/files/usr/bin/pager (pager) in auto mode
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4481 files and directories currently installed.)
+Preparing to unpack .../liblzma_5.8.4_aarch64.deb ...
+Unpacking liblzma (5.8.4) over (5.8.0) ...
+Setting up liblzma (5.8.4) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4481 files and directories currently installed.)
+Preparing to unpack .../xz-utils_5.8.4_aarch64.deb ...
+Unpacking xz-utils (5.8.4) over (5.8.0) ...
+Setting up xz-utils (5.8.4) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4481 files and directories currently installed.)
+Preparing to unpack .../libmd_1.3.0_aarch64.deb ...
+Unpacking libmd (1.3.0) over (1.1.0) ...
+Setting up libmd (1.3.0) ...
+Selecting previously unselected package attr.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4521 files and directories currently installed.)
+Preparing to unpack .../attr_2.6.0_aarch64.deb ...
+Unpacking attr (2.6.0) ...
+Setting up attr (2.6.0) ...
+Selecting previously unselected package libacl.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4549 files and directories currently installed.)
+Preparing to unpack .../libacl_2.4.0_aarch64.deb ...
+Unpacking libacl (2.4.0) ...
+Setting up libacl (2.4.0) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4614 files and directories currently installed.)
+Preparing to unpack .../libandroid-glob_0.6-3_aarch64.deb ...
+Unpacking libandroid-glob (0.6-3) over (0.6-2) ...
+Setting up libandroid-glob (0.6-3) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4614 files and directories currently installed.)
+Preparing to unpack .../tar_1.35-3_aarch64.deb ...
+Unpacking tar (1.35-3) over (1.35) ...
+Setting up tar (1.35-3) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4614 files and directories currently installed.)
+Preparing to unpack .../zstd_1.5.7-1_aarch64.deb ...
+Unpacking zstd (1.5.7-1) over (1.5.7) ...
+Setting up zstd (1.5.7-1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4614 files and directories currently installed.)
+Preparing to unpack .../dpkg_1.22.6-5_aarch64.deb ...
+Unpacking dpkg (1.22.6-5) over (1.22.6-1) ...
+Setting up dpkg (1.22.6-5) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4614 files and directories currently installed.)
+Preparing to unpack .../findutils_4.11.0_aarch64.deb ...
+Unpacking findutils (4.11.0) over (4.10.0) ...
+Setting up findutils (4.11.0) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4614 files and directories currently installed.)
+Preparing to unpack .../libgpg-error_1.61_aarch64.deb ...
+Unpacking libgpg-error (1.61) over (1.50) ...
+Setting up libgpg-error (1.61) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4614 files and directories currently installed.)
+Preparing to unpack .../libassuan_3.0.2-1_aarch64.deb ...
+Unpacking libassuan (3.0.2-1) over (3.0.1-2) ...
+Setting up libassuan (3.0.2-1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4614 files and directories currently installed.)
+Preparing to unpack .../libgcrypt_1.12.4_aarch64.deb ...
+Unpacking libgcrypt (1.12.4) over (1.11.0) ...
+Setting up libgcrypt (1.12.4) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4614 files and directories currently installed.)
+Preparing to unpack .../libnpth_1.8_aarch64.deb ...
+Unpacking libnpth (1.8) over (1.6-2) ...
+Setting up libnpth (1.8) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4614 files and directories currently installed.)
+Preparing to unpack .../gpgv_2.5.24_aarch64.deb ...
+Unpacking gpgv (2.5.24) over (2.4.5-3) ...
+Setting up gpgv (2.5.24) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4614 files and directories currently installed.)
+Preparing to unpack .../grep_3.12-3_aarch64.deb ...
+Unpacking grep (3.12-3) over (3.11) ...
+Setting up grep (3.12-3) ...
+Selecting previously unselected package libtasn1.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4614 files and directories currently installed.)
+Preparing to unpack .../libtasn1_4.21.0_aarch64.deb ...
+Unpacking libtasn1 (4.21.0) ...
+Setting up libtasn1 (4.21.0) ...
+Selecting previously unselected package libffi.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4667 files and directories currently installed.)
+Preparing to unpack .../libffi_3.8.0_aarch64.deb ...
+Unpacking libffi (3.8.0) ...
+Setting up libffi (3.8.0) ...
+Selecting previously unselected package p11-kit.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4678 files and directories currently installed.)
+Preparing to unpack .../p11-kit_0.26.5_aarch64.deb ...
+Unpacking p11-kit (0.26.5) ...
+Setting up p11-kit (0.26.5) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4712 files and directories currently installed.)
+Preparing to unpack .../libnettle_4.0+really3.10.2_aarch64.deb ...
+Unpacking libnettle (4.0+really3.10.2) over (3.10.1) ...
+Setting up libnettle (4.0+really3.10.2) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4712 files and directories currently installed.)
+Preparing to unpack .../libunistring_1.5_aarch64.deb ...
+Unpacking libunistring (1.5) over (1.3) ...
+Setting up libunistring (1.5) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4712 files and directories currently installed.)
+Preparing to unpack .../libidn2_2.3.8-1_aarch64.deb ...
+Unpacking libidn2 (2.3.8-1) over (2.3.7) ...
+Setting up libidn2 (2.3.8-1) ...
+Selecting previously unselected package libngtcp2.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4712 files and directories currently installed.)
+Preparing to unpack .../libngtcp2_1.25.0_aarch64.deb ...
+Unpacking libngtcp2 (1.25.0) ...
+Setting up libngtcp2 (1.25.0) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4730 files and directories currently installed.)
+Preparing to unpack .../libevent_2.1.13_aarch64.deb ...
+Unpacking libevent (2.1.13) over (2.1.12-2) ...
+Setting up libevent (2.1.13) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4730 files and directories currently installed.)
+Preparing to unpack .../libnghttp2_1.70.0_aarch64.deb ...
+Unpacking libnghttp2 (1.70.0) over (1.65.0) ...
+Setting up libnghttp2 (1.70.0) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4730 files and directories currently installed.)
+Preparing to unpack .../libunbound_1.26.2_aarch64.deb ...
+Unpacking libunbound (1.26.2) over (1.22.0) ...
+Setting up libunbound (1.26.2) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4730 files and directories currently installed.)
+Preparing to unpack .../libgnutls_3.8.13-1_aarch64.deb ...
+Unpacking libgnutls (3.8.13-1) over (3.8.9) ...
+Setting up libgnutls (3.8.13-1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4731 files and directories currently installed.)
+Preparing to unpack .../liblz4_1.10.0-1_aarch64.deb ...
+Unpacking liblz4 (1.10.0-1) over (1.10.0) ...
+Setting up liblz4 (1.10.0-1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4731 files and directories currently installed.)
+Preparing to unpack .../archives/sed_4.10_aarch64.deb ...
+Unpacking sed (4.10) over (4.9-1) ...
+Setting up sed (4.10) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4731 files and directories currently installed.)
+Preparing to unpack .../libnghttp3_1.18.0_aarch64.deb ...
+Unpacking libnghttp3 (1.18.0) over (1.8.0) ...
+Setting up libnghttp3 (1.18.0) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4731 files and directories currently installed.)
+Preparing to unpack .../libssh2_1.11.1-2_aarch64.deb ...
+Unpacking libssh2 (1.11.1-2) over (1.11.1) ...
+Setting up libssh2 (1.11.1-2) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4731 files and directories currently installed.)
+Preparing to unpack .../libcurl_8.23.0_aarch64.deb ...
+Unpacking libcurl (8.23.0) over (8.12.1) ...
+Setting up libcurl (8.23.0) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4754 files and directories currently installed.)
+Preparing to unpack .../curl_8.23.0_aarch64.deb ...
+Unpacking curl (8.23.0) over (8.12.1) ...
+Setting up curl (8.23.0) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4754 files and directories currently installed.)
+Preparing to unpack .../dash_0.5.13.5_aarch64.deb ...
+Unpacking dash (0.5.13.5) over (0.5.12) ...
+Setting up dash (0.5.13.5) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4754 files and directories currently installed.)
+Preparing to unpack .../libmpfr_4.2.2_aarch64.deb ...
+Unpacking libmpfr (4.2.2) over (4.2.1) ...
+Setting up libmpfr (4.2.2) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4754 files and directories currently installed.)
+Preparing to unpack .../readline_8.3.6_aarch64.deb ...
+Unpacking readline (8.3.6) over (8.2.13) ...
+Setting up readline (8.3.6) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4759 files and directories currently installed.)
+Preparing to unpack .../gawk_5.4.1_aarch64.deb ...
+Unpacking gawk (5.4.1) over (5.3.0) ...
+Setting up gawk (5.4.1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4760 files and directories currently installed.)
+Preparing to unpack .../procps_4.0.7-2_aarch64.deb ...
+Unpacking procps (4.0.7-2) over (3.3.17-5) ...
+Setting up procps (4.0.7-2) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4760 files and directories currently installed.)
+Preparing to unpack .../psmisc_23.7-1_aarch64.deb ...
+Unpacking psmisc (23.7-1) over (23.7) ...
+Setting up psmisc (23.7-1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4760 files and directories currently installed.)
+Preparing to unpack .../termux-am_0.8.1_all.deb ...
+Unpacking termux-am (0.8.1) over (0.8.0-1) ...
+Setting up termux-am (0.8.1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4760 files and directories currently installed.)
+Preparing to unpack .../termux-am-socket_1.5.0-1_aarch64.deb ...
+Unpacking termux-am-socket (1.5.0-1) over (1.5.0) ...
+Setting up termux-am-socket (1.5.0-1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4760 files and directories currently installed.)
+Preparing to unpack .../termux-core_0.4.0-1_aarch64.deb ...
+Unpacking termux-core (0.4.0-1) over (0.3.0) ...
+Setting up termux-core (0.4.0-1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4761 files and directories currently installed.)
+Preparing to unpack .../termux-exec_1%3a2.5.0-1_aarch64.deb ...
+Unpacking termux-exec (1:2.5.0-1) over (1:2.3.0) ...
+Setting up termux-exec (1:2.5.0-1) ...
+termux-exec.postinst: Start
+termux-exec.postinst: Setting primary Termux '$LD_PRELOAD' library
+termux-exec.postinst: android_build_version_sdk: '34'
+termux-exec: Setting primary Termux '$LD_PRELOAD' library in 'libtermux-exec-ld-preload.so' to '/data/data/com.termux/files/usr/lib/libtermux-exec-direct-ld-preload.so'
+termux-exec.postinst: End
+Selecting previously unselected package libandroid-posix-semaphore.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4764 files and directories currently installed.)
+Preparing to unpack .../libandroid-posix-semaphore_0.1-4_aarch64.deb ...
+Unpacking libandroid-posix-semaphore (0.1-4) ...
+Setting up libandroid-posix-semaphore (0.1-4) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4767 files and directories currently installed.)
+Preparing to unpack .../libsmartcols_2.42.4_aarch64.deb ...
+Unpacking libsmartcols (2.42.4) over (2.40.2-3) ...
+Setting up libsmartcols (2.42.4) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4767 files and directories currently installed.)
+Preparing to unpack .../libcap-ng_2%3a0.9.6_aarch64.deb ...
+Unpacking libcap-ng (2:0.9.6) over (2:0.8.5) ...
+Setting up libcap-ng (2:0.9.6) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4771 files and directories currently installed.)
+Preparing to unpack .../util-linux_2.42.4_aarch64.deb ...
+Unpacking util-linux (2.42.4) over (2.40.2-3) ...
+Setting up util-linux (2.42.4) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4776 files and directories currently installed.)
+Preparing to unpack .../dialog_1.3-20260721-0_aarch64.deb ...
+Unpacking dialog (1.3-20260721-0) over (1.3-20240307-0) ...
+Setting up dialog (1.3-20260721-0) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4776 files and directories currently installed.)
+Preparing to unpack .../termux-tools_1.46.0+really1.45.0-1_aarch64.deb ...
+Unpacking termux-tools (1.46.0+really1.45.0-1) over (1.45.0) ...
+Setting up termux-tools (1.46.0+really1.45.0-1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4776 files and directories currently installed.)
+Preparing to unpack .../termux-keyring_3.14_all.deb ...
+Unpacking termux-keyring (3.14) over (3.12-1) ...
+Setting up termux-keyring (3.14) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4779 files and directories currently installed.)
+Preparing to unpack .../termux-licenses_2.2_all.deb ...
+Unpacking termux-licenses (2.2) over (2.1) ...
+Setting up termux-licenses (2.2) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4781 files and directories currently installed.)
+Preparing to unpack .../xxhash_0.8.4_aarch64.deb ...
+Unpacking xxhash (0.8.4) over (0.8.3) ...
+Setting up xxhash (0.8.4) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4781 files and directories currently installed.)
+Preparing to unpack .../apt_2.8.1-2_aarch64.deb ...
+Unpacking apt (2.8.1-2) over (2.8.1-1) ...
+Setting up apt (2.8.1-2) ...
+
+Configuration file '/data/data/com.termux/files/usr/etc/apt/sources.list'
+ ==> File on system created by you or by a script.
+ ==> File also in package provided by package maintainer.
+   What would you like to do about it ?  Your options are:
+    Y or I  : install the package maintainer's version
+    N or O  : keep your currently-installed version
+      D     : show the differences between the versions
+      Z     : start a shell to examine the situation
+ The default action is to keep your current version.
+*** sources.list (Y/I/N/O/D/Z) [default=N] ? Installing new version of config file /data/data/com.termux/files/usr/etc/apt/sources.list ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4781 files and directories currently installed.)
+Preparing to unpack .../bash_5.3.20_aarch64.deb ...
+Unpacking bash (5.3.20) over (5.2.37-2) ...
+Setting up bash (5.3.20) ...
+
+Configuration file '/data/data/com.termux/files/usr/etc/bash.bashrc'
+ ==> File on system created by you or by a script.
+ ==> File also in package provided by package maintainer.
+   What would you like to do about it ?  Your options are:
+    Y or I  : install the package maintainer's version
+    N or O  : keep your currently-installed version
+      D     : show the differences between the versions
+      Z     : start a shell to examine the situation
+ The default action is to keep your current version.
+*** bash.bashrc (Y/I/N/O/D/Z) [default=N] ? Installing new version of config file /data/data/com.termux/files/usr/etc/bash.bashrc ...
+
+Configuration file '/data/data/com.termux/files/usr/etc/profile'
+ ==> File on system created by you or by a script.
+ ==> File also in package provided by package maintainer.
+   What would you like to do about it ?  Your options are:
+    Y or I  : install the package maintainer's version
+    N or O  : keep your currently-installed version
+      D     : show the differences between the versions
+      Z     : start a shell to examine the situation
+ The default action is to keep your current version.
+*** profile (Y/I/N/O/D/Z) [default=N] ? Installing new version of config file /data/data/com.termux/files/usr/etc/profile ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4789 files and directories currently installed.)
+Preparing to unpack .../00-command-not-found_3.5.0-18_aarch64.deb ...
+Unpacking command-not-found (3.5.0-18) over (2.4.0-68) ...
+Preparing to unpack .../01-debianutils_5.24_aarch64.deb ...
+Unpacking debianutils (5.24) over (5.21) ...
+Preparing to unpack .../02-dos2unix_7.5.7_aarch64.deb ...
+Unpacking dos2unix (7.5.7) over (7.5.2) ...
+Preparing to unpack .../03-ed_1.22.6_aarch64.deb ...
+Unpacking ed (1.22.6) over (1.21.1) ...
+Preparing to unpack .../04-inetutils_2.8-1_aarch64.deb ...
+Unpacking inetutils (2.8-1) over (2.6) ...
+Selecting previously unselected package libmagic.
+Preparing to unpack .../05-libmagic_5.48-3_aarch64.deb ...
+Unpacking libmagic (5.48-3) ...
+Preparing to unpack .../06-libtirpc_1.3.8_aarch64.deb ...
+Unpacking libtirpc (1.3.8) over (1.3.6) ...
+Preparing to unpack .../07-lsof_4.99.7_aarch64.deb ...
+Unpacking lsof (4.99.7) over (4.99.4) ...
+Preparing to unpack .../08-nano_9.3_aarch64.deb ...
+Unpacking nano (9.3) over (8.3) ...
+Preparing to unpack .../09-net-tools_2.10.0-1_aarch64.deb ...
+Unpacking net-tools (2.10.0-1) over (2.10.0) ...
+Preparing to unpack .../10-patch_2.8.1_aarch64.deb ...
+Unpacking patch (2.8.1) over (2.7.6-4) ...
+Preparing to unpack .../11-unzip_6.0-10_aarch64.deb ...
+Unpacking unzip (6.0-10) over (6.0-9) ...
+Setting up libtirpc (1.3.8) ...
+Setting up net-tools (2.10.0-1) ...
+Setting up inetutils (2.8-1) ...
+Setting up unzip (6.0-10) ...
+Setting up libmagic (5.48-3) ...
+Setting up ed (1.22.6) ...
+Setting up command-not-found (3.5.0-18) ...
+Setting up patch (2.8.1) ...
+Setting up lsof (4.99.7) ...
+Setting up nano (9.3) ...
+update-alternatives: updating alternative /data/data/com.termux/files/usr/bin/nano because link group editor has changed slave links
+update-alternatives: warning: skipping updating manpage database as 'makewhatis' command from 'mandoc' package is not installed
+Setting up debianutils (5.24) ...
+Setting up dos2unix (7.5.7) ...
+No mirror or mirror group selected. You might want to select one by running 'termux-change-repo'
+Checking availability of current mirror:
+[*] https://packages-cf.termux.dev/apt/termux-main/: ok
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Get:1 https://packages-cf.termux.dev/apt/termux-main stable InRelease [14.0 kB]
+Get:2 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 Packages [591 kB]
+Fetched 605 kB in 3s (184 kB/s)
+Reading package lists...
+Building dependency tree...
+Reading state information...
+All packages are up to date.
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+procps is already the newest version (4.0.7-2).
+util-linux is already the newest version (2.42.4).
+The following additional packages will be installed:
+  gdbm glib krb5 ldns libandroid-shmem libcompiler-rt libcrypt libdb libedit
+  libexpat libllvm libresolv-wrapper libsqlite libtalloc libxml2 lld llvm make
+  ncurses-ui-libs ndk-sysroot openssh openssh-sftp-server pkg-config proot
+  python-ensurepip-wheels python-pip termux-auth
+Suggested packages:
+  perl termux-services bash-completion termux-api zsh-completions
+  python-tkinter
+The following NEW packages will be installed:
+  clang gdbm git glib krb5 ldns libandroid-shmem libcompiler-rt libcrypt libdb
+  libedit libexpat libllvm libresolv-wrapper libsqlite libtalloc libxml2 lld
+  llvm make ncurses-ui-libs ndk-sysroot openssh openssh-sftp-server pkg-config
+  proot proot-distro python python-ensurepip-wheels python-pip termux-auth
+  time
+0 upgraded, 32 newly installed, 0 to remove and 0 not upgraded.
+Need to get 104 MB of archives.
+After this operation, 632 MB of additional disk space will be used.
+Get:1 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 libcompiler-rt aarch64 21.1.8-3 [3025 kB]
+Get:2 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 libxml2 aarch64 2.15.4-1 [443 kB]
+Get:3 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 libllvm aarch64 21.1.8-3 [30.7 MB]
+Get:4 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 lld aarch64 21.1.8-3 [2812 kB]
+Get:5 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 llvm aarch64 21.1.8-3 [14.9 MB]
+Get:6 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 ndk-sysroot aarch64 30 [1997 kB]
+Get:7 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 clang aarch64 21.1.8-3 [30.7 MB]
+Get:8 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 gdbm aarch64 1.26-1 [150 kB]
+Get:9 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 libexpat aarch64 2.9.0 [100 kB]
+Get:10 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 git aarch64 2.56.0 [4541 kB]
+Get:11 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 libcrypt aarch64 0.2-6 [8880 B]
+Get:12 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 libsqlite aarch64 3.54.1 [769 kB]
+Get:13 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 ncurses-ui-libs aarch64 6.6.20260307+really6.5.20250830 [32.9 kB]
+Get:14 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 python aarch64 3.14.8 [4852 kB]
+Get:15 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 glib aarch64 2.90.1 [2573 kB]
+Get:16 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 libresolv-wrapper aarch64 1.1.8 [11.2 kB]
+Get:17 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 libdb aarch64 18.1.40-6 [497 kB]
+Get:18 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 krb5 aarch64 1.22.2 [902 kB]
+Get:19 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 ldns aarch64 1.9.2 [305 kB]
+Get:20 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 libandroid-shmem aarch64 0.7 [7216 B]
+Get:21 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 libedit aarch64 20260512-3.1-0 [79.9 kB]
+Get:22 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 libtalloc aarch64 2.5.0 [34.0 kB]
+Get:23 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 make aarch64 4.4.1-1 [240 kB]
+Get:24 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 openssh-sftp-server aarch64 10.6p1-3 [56.6 kB]
+Get:25 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 termux-auth aarch64 1.5.0-1 [6996 B]
+Get:26 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 openssh aarch64 10.6p1-3 [969 kB]
+Get:27 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 pkg-config aarch64 0.29.2-3 [32.8 kB]
+Get:28 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 proot aarch64 5.1.107.101 [103 kB]
+Get:29 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 python-pip all 26.2.2-2 [1071 kB]
+Get:30 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 proot-distro all 5.10.3 [294 kB]
+Get:31 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 python-ensurepip-wheels all 3.14.8 [1738 kB]
+Get:32 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 time aarch64 1.10 [23.9 kB]
+Fetched 104 MB in 12s (8373 kB/s)
+Selecting previously unselected package libcompiler-rt.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4799 files and directories currently installed.)
+Preparing to unpack .../00-libcompiler-rt_21.1.8-3_aarch64.deb ...
+Unpacking libcompiler-rt (21.1.8-3) ...
+Selecting previously unselected package libxml2.
+Preparing to unpack .../01-libxml2_2.15.4-1_aarch64.deb ...
+Unpacking libxml2 (2.15.4-1) ...
+Selecting previously unselected package libllvm.
+Preparing to unpack .../02-libllvm_21.1.8-3_aarch64.deb ...
+Unpacking libllvm (21.1.8-3) ...
+Selecting previously unselected package lld.
+Preparing to unpack .../03-lld_21.1.8-3_aarch64.deb ...
+Unpacking lld (21.1.8-3) ...
+Selecting previously unselected package llvm.
+Preparing to unpack .../04-llvm_21.1.8-3_aarch64.deb ...
+Unpacking llvm (21.1.8-3) ...
+Selecting previously unselected package ndk-sysroot.
+Preparing to unpack .../05-ndk-sysroot_30_aarch64.deb ...
+Unpacking ndk-sysroot (30) ...
+Selecting previously unselected package clang.
+Preparing to unpack .../06-clang_21.1.8-3_aarch64.deb ...
+Unpacking clang (21.1.8-3) ...
+Selecting previously unselected package gdbm.
+Preparing to unpack .../07-gdbm_1.26-1_aarch64.deb ...
+Unpacking gdbm (1.26-1) ...
+Selecting previously unselected package libexpat.
+Preparing to unpack .../08-libexpat_2.9.0_aarch64.deb ...
+Unpacking libexpat (2.9.0) ...
+Selecting previously unselected package git.
+Preparing to unpack .../09-git_2.56.0_aarch64.deb ...
+Unpacking git (2.56.0) ...
+Selecting previously unselected package libcrypt.
+Preparing to unpack .../10-libcrypt_0.2-6_aarch64.deb ...
+Unpacking libcrypt (0.2-6) ...
+Selecting previously unselected package libsqlite.
+Preparing to unpack .../11-libsqlite_3.54.1_aarch64.deb ...
+Unpacking libsqlite (3.54.1) ...
+Selecting previously unselected package ncurses-ui-libs.
+Preparing to unpack .../12-ncurses-ui-libs_6.6.20260307+really6.5.20250830_aarch64.deb ...
+Unpacking ncurses-ui-libs (6.6.20260307+really6.5.20250830) ...
+Selecting previously unselected package python.
+Preparing to unpack .../13-python_3.14.8_aarch64.deb ...
+Unpacking python (3.14.8) ...
+Selecting previously unselected package glib.
+Preparing to unpack .../14-glib_2.90.1_aarch64.deb ...
+Unpacking glib (2.90.1) ...
+Selecting previously unselected package libresolv-wrapper.
+Preparing to unpack .../15-libresolv-wrapper_1.1.8_aarch64.deb ...
+Unpacking libresolv-wrapper (1.1.8) ...
+Selecting previously unselected package libdb.
+Preparing to unpack .../16-libdb_18.1.40-6_aarch64.deb ...
+Unpacking libdb (18.1.40-6) ...
+Selecting previously unselected package krb5.
+Preparing to unpack .../17-krb5_1.22.2_aarch64.deb ...
+Unpacking krb5 (1.22.2) ...
+Selecting previously unselected package ldns.
+Preparing to unpack .../18-ldns_1.9.2_aarch64.deb ...
+Unpacking ldns (1.9.2) ...
+Selecting previously unselected package libandroid-shmem.
+Preparing to unpack .../19-libandroid-shmem_0.7_aarch64.deb ...
+Unpacking libandroid-shmem (0.7) ...
+Selecting previously unselected package libedit.
+Preparing to unpack .../20-libedit_20260512-3.1-0_aarch64.deb ...
+Unpacking libedit (20260512-3.1-0) ...
+Selecting previously unselected package libtalloc.
+Preparing to unpack .../21-libtalloc_2.5.0_aarch64.deb ...
+Unpacking libtalloc (2.5.0) ...
+Selecting previously unselected package make.
+Preparing to unpack .../22-make_4.4.1-1_aarch64.deb ...
+Unpacking make (4.4.1-1) ...
+Selecting previously unselected package openssh-sftp-server.
+Preparing to unpack .../23-openssh-sftp-server_10.6p1-3_aarch64.deb ...
+Unpacking openssh-sftp-server (10.6p1-3) ...
+Selecting previously unselected package termux-auth.
+Preparing to unpack .../24-termux-auth_1.5.0-1_aarch64.deb ...
+Unpacking termux-auth (1.5.0-1) ...
+Selecting previously unselected package openssh.
+Preparing to unpack .../25-openssh_10.6p1-3_aarch64.deb ...
+Unpacking openssh (10.6p1-3) ...
+Selecting previously unselected package pkg-config.
+Preparing to unpack .../26-pkg-config_0.29.2-3_aarch64.deb ...
+Unpacking pkg-config (0.29.2-3) ...
+Selecting previously unselected package proot.
+Preparing to unpack .../27-proot_5.1.107.101_aarch64.deb ...
+Unpacking proot (5.1.107.101) ...
+Selecting previously unselected package python-pip.
+Preparing to unpack .../28-python-pip_26.2.2-2_all.deb ...
+Unpacking python-pip (26.2.2-2) ...
+Selecting previously unselected package proot-distro.
+Preparing to unpack .../29-proot-distro_5.10.3_all.deb ...
+Unpacking proot-distro (5.10.3) ...
+Selecting previously unselected package python-ensurepip-wheels.
+Preparing to unpack .../30-python-ensurepip-wheels_3.14.8_all.deb ...
+Unpacking python-ensurepip-wheels (3.14.8) ...
+Selecting previously unselected package time.
+Preparing to unpack .../31-time_1.10_aarch64.deb ...
+Unpacking time (1.10) ...
+Setting up libedit (20260512-3.1-0) ...
+Setting up openssh-sftp-server (10.6p1-3) ...
+Setting up time (1.10) ...
+Setting up gdbm (1.26-1) ...
+Setting up ldns (1.9.2) ...
+Setting up libandroid-shmem (0.7) ...
+Setting up ndk-sysroot (30) ...
+Setting up libexpat (2.9.0) ...
+Setting up libsqlite (3.54.1) ...
+Setting up libcrypt (0.2-6) ...
+Setting up ncurses-ui-libs (6.6.20260307+really6.5.20250830) ...
+Setting up make (4.4.1-1) ...
+Setting up libcompiler-rt (21.1.8-3) ...
+Setting up git (2.56.0) ...
+Setting up libresolv-wrapper (1.1.8) ...
+Setting up libtalloc (2.5.0) ...
+Setting up termux-auth (1.5.0-1) ...
+Setting up libdb (18.1.40-6) ...
+Setting up python (3.14.8) ...
+Setting up libxml2 (2.15.4-1) ...
+Setting up proot (5.1.107.101) ...
+Setting up python-ensurepip-wheels (3.14.8) ...
+Setting up python-pip (26.2.2-2) ...
+pip setup...
+Writing to /data/data/com.termux/files/usr/etc/pip.conf
+Setting up krb5 (1.22.2) ...
+Setting up libllvm (21.1.8-3) ...
+Setting up proot-distro (5.10.3) ...
+Setting up glib (2.90.1) ...
+No schema files found: doing nothing.
+Setting up openssh (10.6p1-3) ...
+Generating public/private rsa key pair.
+Your identification has been saved in /data/data/com.termux/files/usr/etc/ssh/ssh_host_rsa_key
+Your public key has been saved in /data/data/com.termux/files/usr/etc/ssh/ssh_host_rsa_key.pub
+The key fingerprint is:
+SHA256:Pn7/bFvpieNLGYdbooaRe1eLF3g0NJnw90hxfN9eCm4 u0_a432@localhost
+The key's randomart image is:
++---[RSA 3072]----+
+|             .o++|
+|              o=+|
+|              .+=|
+|          . ..+.B|
+|        So . *.Oo|
+|       .  + E % =|
+|        oo = * +.|
+|       . .+ oo=..|
+|        .. .o**+ |
++----[SHA256]-----+
+Generating public/private ecdsa key pair.
+Your identification has been saved in /data/data/com.termux/files/usr/etc/ssh/ssh_host_ecdsa_key
+Your public key has been saved in /data/data/com.termux/files/usr/etc/ssh/ssh_host_ecdsa_key.pub
+The key fingerprint is:
+SHA256:5NTzmaObtKVHP1BDJJLmkVoeiG/LirznKPqg84YSEpE u0_a432@localhost
+The key's randomart image is:
++---[ECDSA 256]---+
+| .     . ..o...  |
+|E     . ..B. ..  |
+| .     .o*oo .   |
+|.      ++ oo oo  |
+| .     oS.  =. . |
+|o       o  .o.   |
+|oo . . .  o..o   |
+|=.o o.o  . *. o  |
+|+*o.o+.   =.   . |
++----[SHA256]-----+
+Generating public/private ed25519 key pair.
+Your identification has been saved in /data/data/com.termux/files/usr/etc/ssh/ssh_host_ed25519_key
+Your public key has been saved in /data/data/com.termux/files/usr/etc/ssh/ssh_host_ed25519_key.pub
+The key fingerprint is:
+SHA256:VxLIG50M1inhwBcTdSlr1xpP57a9WOVwKpY1gYOotWg u0_a432@localhost
+The key's randomart image is:
++--[ED25519 256]--+
+|     ...B@oo..   |
+|      .+*oB+..   |
+|       .++oo+..  |
+|       +..ooo.o..|
+|      E S... =+oo|
+|     .   .  .o.*+|
+|            + .o+|
+|           . .o..|
+|             . ..|
++----[SHA256]-----+
+
+If you plan to use the 'ssh-agent'
+it is recommended to run it as a service.
+Run 'pkg i termux-services'
+to install the ('runit') service manager
+
+You can enable the ssh-agent service
+using 'sv-enable ssh-agent'
+You can also enable sshd to autostart
+using 'sv-enable sshd'
+Setting up lld (21.1.8-3) ...
+Setting up pkg-config (0.29.2-3) ...
+Setting up llvm (21.1.8-3) ...
+Setting up clang (21.1.8-3) ...
+No mirror or mirror group selected. You might want to select one by running 'termux-change-repo'
+Checking availability of current mirror:
+[*] https://packages-cf.termux.dev/apt/termux-main/: ok
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libopenblas
+The following NEW packages will be installed:
+  libopenblas python-numpy
+0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
+Need to get 6217 kB of archives.
+After this operation, 33.9 MB of additional disk space will be used.
+Get:1 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 libopenblas aarch64 0.3.34 [2596 kB]
+Get:2 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 python-numpy aarch64 2.5.4 [3621 kB]
+Fetched 6217 kB in 2s (2569 kB/s)
+Selecting previously unselected package libopenblas.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 16277 files and directories currently installed.)
+Preparing to unpack .../libopenblas_0.3.34_aarch64.deb ...
+Unpacking libopenblas (0.3.34) ...
+Selecting previously unselected package python-numpy.
+Preparing to unpack .../python-numpy_2.5.4_aarch64.deb ...
+Unpacking python-numpy (2.5.4) ...
+Setting up libopenblas (0.3.34) ...
+Setting up python-numpy (2.5.4) ...
+No mirror or mirror group selected. You might want to select one by running 'termux-change-repo'
+Checking availability of current mirror:
+[*] https://packages-cf.termux.dev/apt/termux-main/: ok
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  brotli fontconfig freetype fribidi giflib harfbuzz libandroid-execinfo
+  libaom libavif libcairo libdav1d libgraphite libimagequant libjpeg-turbo
+  liblzo libpixman libpng libraqm librav1e libtiff libwebp libx11 libxau
+  libxcb libxdmcp libxext libxrender littlecms openjpeg svt-av1 ttf-dejavu
+  xorg-util-macros xorgproto
+Recommended packages:
+  xorg-xauth
+The following NEW packages will be installed:
+  brotli fontconfig freetype fribidi giflib harfbuzz libandroid-execinfo
+  libaom libavif libcairo libdav1d libgraphite libimagequant libjpeg-turbo
+  liblzo libpixman libpng libraqm librav1e libtiff libwebp libx11 libxau
+  libxcb libxdmcp libxext libxrender littlecms openjpeg python-pillow svt-av1
+  ttf-dejavu xorg-util-macros xorgproto
+0 upgraded, 34 newly installed, 0 to remove and 0 not upgraded.
+Need to get 16.2 MB of archives.
+After this operation, 86.4 MB of additional disk space will be used.
+Get:1 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 brotli aarch64 1.2.1 [344 kB]
+Get:2 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 libpng aarch64 1.6.59 [196 kB]
+Get:3 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 freetype aarch64 2.15.0 [422 kB]
+Get:4 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 ttf-dejavu all 2.37-8 [2468 kB]
+Get:5 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 fontconfig aarch64 2.18.3 [140 kB]
+Get:6 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 fribidi aarch64 1.0.18 [67.2 kB]
+Get:7 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 giflib aarch64 6.1.3 [43.8 kB]
+Get:8 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 libandroid-execinfo aarch64 0.1-3 [15.0 kB]
+Get:9 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 liblzo aarch64 2.10-5 [69.6 kB]
+Get:10 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 libpixman aarch64 0.46.4-1 [158 kB]
+Get:11 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 libxau aarch64 1.0.12-2 [9120 B]
+Get:12 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 libxdmcp aarch64 1.1.5-2 [24.5 kB]
+Get:13 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 libxcb aarch64 1.17.0-1 [914 kB]
+Get:14 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 xorg-util-macros all 1.20.2 [21.9 kB]
+Get:15 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 xorgproto all 2026.1 [250 kB]
+Get:16 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 libx11 aarch64 1.8.14 [1911 kB]
+Get:17 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 libxext aarch64 1.3.7 [98.0 kB]
+Get:18 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 libxrender aarch64 0.9.13 [24.7 kB]
+Get:19 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 libcairo aarch64 1.18.6 [488 kB]
+Get:20 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 libgraphite aarch64 1.3.15 [82.2 kB]
+Get:21 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 harfbuzz aarch64 15.0.0 [965 kB]
+Get:22 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 libaom aarch64 3.15.3 [2082 kB]
+Get:23 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 libdav1d aarch64 1.5.4 [266 kB]
+Get:24 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 libjpeg-turbo aarch64 3.2.1 [456 kB]
+Get:25 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 libtiff aarch64 4.7.2 [870 kB]
+Get:26 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 libwebp aarch64 1.6.0.0.0.1+really1.6.0 [330 kB]
+Get:27 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 librav1e aarch64 0.8.1 [695 kB]
+Get:28 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 svt-av1 aarch64 4.2.0 [1491 kB]
+Get:29 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 libavif aarch64 1.4.2 [385 kB]
+Get:30 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 libimagequant aarch64 4.4.1 [225 kB]
+Get:31 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 libraqm aarch64 0.11.0 [15.0 kB]
+Get:32 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 littlecms aarch64 2.19.1 [143 kB]
+Get:33 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 openjpeg aarch64 2.5.4 [150 kB]
+Get:34 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 python-pillow aarch64 13.0.0 [410 kB]
+Fetched 16.2 MB in 5s (3136 kB/s)
+Selecting previously unselected package brotli.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 17337 files and directories currently installed.)
+Preparing to unpack .../00-brotli_1.2.1_aarch64.deb ...
+Unpacking brotli (1.2.1) ...
+Selecting previously unselected package libpng.
+Preparing to unpack .../01-libpng_1.6.59_aarch64.deb ...
+Unpacking libpng (1.6.59) ...
+Selecting previously unselected package freetype.
+Preparing to unpack .../02-freetype_2.15.0_aarch64.deb ...
+Unpacking freetype (2.15.0) ...
+Selecting previously unselected package ttf-dejavu.
+Preparing to unpack .../03-ttf-dejavu_2.37-8_all.deb ...
+Unpacking ttf-dejavu (2.37-8) ...
+Selecting previously unselected package fontconfig.
+Preparing to unpack .../04-fontconfig_2.18.3_aarch64.deb ...
+Unpacking fontconfig (2.18.3) ...
+Selecting previously unselected package fribidi.
+Preparing to unpack .../05-fribidi_1.0.18_aarch64.deb ...
+Unpacking fribidi (1.0.18) ...
+Selecting previously unselected package giflib.
+Preparing to unpack .../06-giflib_6.1.3_aarch64.deb ...
+Unpacking giflib (6.1.3) ...
+Selecting previously unselected package libandroid-execinfo.
+Preparing to unpack .../07-libandroid-execinfo_0.1-3_aarch64.deb ...
+Unpacking libandroid-execinfo (0.1-3) ...
+Selecting previously unselected package liblzo.
+Preparing to unpack .../08-liblzo_2.10-5_aarch64.deb ...
+Unpacking liblzo (2.10-5) ...
+Selecting previously unselected package libpixman.
+Preparing to unpack .../09-libpixman_0.46.4-1_aarch64.deb ...
+Unpacking libpixman (0.46.4-1) ...
+Selecting previously unselected package libxau.
+Preparing to unpack .../10-libxau_1.0.12-2_aarch64.deb ...
+Unpacking libxau (1.0.12-2) ...
+Selecting previously unselected package libxdmcp.
+Preparing to unpack .../11-libxdmcp_1.1.5-2_aarch64.deb ...
+Unpacking libxdmcp (1.1.5-2) ...
+Selecting previously unselected package libxcb.
+Preparing to unpack .../12-libxcb_1.17.0-1_aarch64.deb ...
+Unpacking libxcb (1.17.0-1) ...
+Selecting previously unselected package xorg-util-macros.
+Preparing to unpack .../13-xorg-util-macros_1.20.2_all.deb ...
+Unpacking xorg-util-macros (1.20.2) ...
+Selecting previously unselected package xorgproto.
+Preparing to unpack .../14-xorgproto_2026.1_all.deb ...
+Unpacking xorgproto (2026.1) ...
+Selecting previously unselected package libx11.
+Preparing to unpack .../15-libx11_1.8.14_aarch64.deb ...
+Unpacking libx11 (1.8.14) ...
+Selecting previously unselected package libxext.
+Preparing to unpack .../16-libxext_1.3.7_aarch64.deb ...
+Unpacking libxext (1.3.7) ...
+Selecting previously unselected package libxrender.
+Preparing to unpack .../17-libxrender_0.9.13_aarch64.deb ...
+Unpacking libxrender (0.9.13) ...
+Selecting previously unselected package libcairo.
+Preparing to unpack .../18-libcairo_1.18.6_aarch64.deb ...
+Unpacking libcairo (1.18.6) ...
+Selecting previously unselected package libgraphite.
+Preparing to unpack .../19-libgraphite_1.3.15_aarch64.deb ...
+Unpacking libgraphite (1.3.15) ...
+Selecting previously unselected package harfbuzz.
+Preparing to unpack .../20-harfbuzz_15.0.0_aarch64.deb ...
+Unpacking harfbuzz (15.0.0) ...
+Selecting previously unselected package libaom.
+Preparing to unpack .../21-libaom_3.15.3_aarch64.deb ...
+Unpacking libaom (3.15.3) ...
+Selecting previously unselected package libdav1d.
+Preparing to unpack .../22-libdav1d_1.5.4_aarch64.deb ...
+Unpacking libdav1d (1.5.4) ...
+Selecting previously unselected package libjpeg-turbo.
+Preparing to unpack .../23-libjpeg-turbo_3.2.1_aarch64.deb ...
+Unpacking libjpeg-turbo (3.2.1) ...
+Selecting previously unselected package libtiff.
+Preparing to unpack .../24-libtiff_4.7.2_aarch64.deb ...
+Unpacking libtiff (4.7.2) ...
+Selecting previously unselected package libwebp.
+Preparing to unpack .../25-libwebp_1.6.0.0.0.1+really1.6.0_aarch64.deb ...
+Unpacking libwebp (1.6.0.0.0.1+really1.6.0) ...
+Selecting previously unselected package librav1e.
+Preparing to unpack .../26-librav1e_0.8.1_aarch64.deb ...
+Unpacking librav1e (0.8.1) ...
+Selecting previously unselected package svt-av1.
+Preparing to unpack .../27-svt-av1_4.2.0_aarch64.deb ...
+Unpacking svt-av1 (4.2.0) ...
+Selecting previously unselected package libavif.
+Preparing to unpack .../28-libavif_1.4.2_aarch64.deb ...
+Unpacking libavif (1.4.2) ...
+Selecting previously unselected package libimagequant.
+Preparing to unpack .../29-libimagequant_4.4.1_aarch64.deb ...
+Unpacking libimagequant (4.4.1) ...
+Selecting previously unselected package libraqm.
+Preparing to unpack .../30-libraqm_0.11.0_aarch64.deb ...
+Unpacking libraqm (0.11.0) ...
+Selecting previously unselected package littlecms.
+Preparing to unpack .../31-littlecms_2.19.1_aarch64.deb ...
+Unpacking littlecms (2.19.1) ...
+Selecting previously unselected package openjpeg.
+Preparing to unpack .../32-openjpeg_2.5.4_aarch64.deb ...
+Unpacking openjpeg (2.5.4) ...
+Selecting previously unselected package python-pillow.
+Preparing to unpack .../33-python-pillow_13.0.0_aarch64.deb ...
+Unpacking python-pillow (13.0.0) ...
+Setting up svt-av1 (4.2.0) ...
+Setting up libpng (1.6.59) ...
+Setting up libpixman (0.46.4-1) ...
+Setting up littlecms (2.19.1) ...
+Setting up libxdmcp (1.1.5-2) ...
+Setting up libgraphite (1.3.15) ...
+Setting up libaom (3.15.3) ...
+Setting up ttf-dejavu (2.37-8) ...
+Setting up libandroid-execinfo (0.1-3) ...
+Setting up xorg-util-macros (1.20.2) ...
+Setting up libxau (1.0.12-2) ...
+Setting up fribidi (1.0.18) ...
+Setting up libdav1d (1.5.4) ...
+Setting up libjpeg-turbo (3.2.1) ...
+Setting up libimagequant (4.4.1) ...
+Setting up librav1e (0.8.1) ...
+Setting up giflib (6.1.3) ...
+Setting up xorgproto (2026.1) ...
+Setting up libxcb (1.17.0-1) ...
+Setting up liblzo (2.10-5) ...
+Setting up openjpeg (2.5.4) ...
+Setting up brotli (1.2.1) ...
+Setting up libtiff (4.7.2) ...
+Setting up libx11 (1.8.14) ...
+Setting up freetype (2.15.0) ...
+Setting up libxext (1.3.7) ...
+Setting up libwebp (1.6.0.0.0.1+really1.6.0) ...
+Setting up fontconfig (2.18.3) ...
+Setting up libxrender (0.9.13) ...
+Setting up libavif (1.4.2) ...
+Setting up libcairo (1.18.6) ...
+Setting up harfbuzz (15.0.0) ...
+Setting up libraqm (0.11.0) ...
+Setting up python-pillow (13.0.0) ...
+No mirror or mirror group selected. You might want to select one by running 'termux-change-repo'
+Checking availability of current mirror:
+[*] https://packages-cf.termux.dev/apt/termux-main/: ok
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+E: Unable to locate package opencv-python
+Collecting fastapi
+  Downloading fastapi-0.162.0-py3-none-any.whl.metadata (26 kB)
+Collecting uvicorn
+  Downloading uvicorn-0.54.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting websockets
+  Downloading websockets-17.4-py3-none-any.whl.metadata (6.3 kB)
+Collecting starlette>=0.46.0 (from fastapi)
+  Downloading starlette-1.10.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting pydantic>=2.9.0 (from fastapi)
+  Downloading pydantic-2.14.2-py3-none-any.whl.metadata (137 kB)
+Collecting typing-extensions>=4.8.0 (from fastapi)
+  Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting typing-inspection>=0.4.2 (from fastapi)
+  Downloading typing_inspection-0.4.4-py3-none-any.whl.metadata (2.6 kB)
+Collecting annotated-doc>=0.0.2 (from fastapi)
+  Downloading annotated_doc-0.0.5-py3-none-any.whl.metadata (6.5 kB)
+Collecting opentelemetry-api>=1.44.0 (from fastapi)
+  Downloading opentelemetry_api-1.45.2-py3-none-any.whl.metadata (1.4 kB)
+Collecting click>=7.0 (from uvicorn)
+  Downloading click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+Collecting h11>=0.8 (from uvicorn)
+  Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Collecting annotated-types>=0.6.0 (from pydantic>=2.9.0->fastapi)
+  Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.50.2 (from pydantic>=2.9.0->fastapi)
+  Downloading pydantic_core-2.50.2.tar.gz (518 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'error'
+  error: subprocess-exited-with-error
+  
+  × installing build dependencies for pydantic-core did not run successfully.
+  │ exit code: 1
+  ╰─> [31 lines of output]
+      Collecting maturin<2,>=1.15.0
+        Downloading maturin-1.16.0.tar.gz (396 kB)
+        Installing build dependencies: started
+        Installing build dependencies: finished with status 'done'
+        Getting requirements to build wheel: started
+        Getting requirements to build wheel: finished with status 'done'
+        Installing backend dependencies: started
+        Installing backend dependencies: finished with status 'done'
+        Preparing metadata (pyproject.toml): started
+        Preparing metadata (pyproject.toml): finished with status 'error'
+        error: subprocess-exited-with-error
+      
+        × Preparing metadata (pyproject.toml) did not run successfully.
+        │ exit code: 1
+        ╰─> [6 lines of output]
+            /data/data/com.termux/files/usr/tmp/pip-build-env-6a5klch2/overlay/lib/python3.14/site-packages/setuptools/_vendor/wheel/bdist_wheel.py:4: FutureWarning: The 'wheel' package is no longer the canonical location of the 'bdist_wheel' command, and will be removed in a future release. Please update to setuptools v70.1 or later which contains an integrated version of this command.
+              warn(
+            Python reports SOABI: cpython-314-aarch64-linux-android
+            Computed rustc target triple: aarch64-unknown-linux-android
+            Target triple not supported by rustup: aarch64-unknown-linux-android
+            Rust not found, installing into a temporary directory
+            [end of output]
+      
+        note: This error originates from a subprocess, and is likely not a problem with pip.
+      error: metadata-generation-failed
+      
+      × Encountered error while generating package metadata.
+      ╰─> maturin
+      
+      note: This is an issue with the package mentioned above, not pip.
+      hint: See above for details.
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+ERROR: Failed to build 'pydantic-core' when installing build dependencies for pydantic-core
+Collecting aiohttp
+  Downloading aiohttp-3.14.5-cp314-cp314-android_24_arm64_v8a.whl.metadata (8.3 kB)
+Collecting aiohappyeyeballs>=2.5.0 (from aiohttp)
+  Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl.metadata (5.9 kB)
+Collecting aiosignal>=1.4.0 (from aiohttp)
+  Downloading aiosignal-1.4.0-py3-none-any.whl.metadata (3.7 kB)
+Collecting attrs>=17.3.0 (from aiohttp)
+  Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+Collecting frozenlist>=1.1.1 (from aiohttp)
+  Downloading frozenlist-1.8.0-py3-none-any.whl.metadata (20 kB)
+Collecting multidict<8.0,>=4.5 (from aiohttp)
+  Downloading multidict-7.2.1-py3-none-any.whl.metadata (6.1 kB)
+Collecting propcache>=0.2.0 (from aiohttp)
+  Downloading propcache-0.5.4-py3-none-any.whl.metadata (25 kB)
+Collecting yarl<2.0,>=1.25.1 (from aiohttp)
+  Downloading yarl-1.25.1-py3-none-any.whl.metadata (111 kB)
+Collecting idna>=2.0 (from yarl<2.0,>=1.25.1->aiohttp)
+  Using cached idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+Downloading aiohttp-3.14.5-cp314-cp314-android_24_arm64_v8a.whl (540 kB)
+   ━━━━━━━━━━━━━ 540.7/540.7   2.5 MB/s  0:00:00
+                 kB                             
+Downloading multidict-7.2.1-py3-none-any.whl (28 kB)
+Downloading yarl-1.25.1-py3-none-any.whl (63 kB)
+Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl (15 kB)
+Downloading aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
+Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+Downloading frozenlist-1.8.0-py3-none-any.whl (13 kB)
+Using cached idna-3.20-py3-none-any.whl (69 kB)
+Downloading propcache-0.5.4-py3-none-any.whl (16 kB)
+Installing collected packages: propcache, multidict, idna, frozenlist, attrs, aiohappyeyeballs, yarl, aiosignal, aiohttp
+
+Successfully installed aiohappyeyeballs-2.7.1 aiohttp-3.14.5 aiosignal-1.4.0 attrs-26.1.0 frozenlist-1.8.0 idna-3.20 multidict-7.2.1 propcache-0.5.4 yarl-1.25.1
